@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SDAM2_Assignment
 {
-    public partial class loginPage : Form
+    public partial class LoginPage : Form
     {
-        public loginPage()
+        public LoginPage()
         {
             InitializeComponent();
         }
