@@ -16,5 +16,16 @@ namespace SDAM2_Assignment
         {
             InitializeComponent();
         }
+
+        /// Event handler for the Login button click.
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
