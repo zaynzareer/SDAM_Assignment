@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.loginLabel = new System.Windows.Forms.Label();
@@ -38,8 +38,6 @@
             this.username = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,8 +47,6 @@
             this.panelLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panelLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelLeft.Controls.Add(this.btnLogin);
-            this.panelLeft.Controls.Add(this.btnExit);
-            this.panelLeft.Controls.Add(this.btnClear);
             this.panelLeft.Controls.Add(this.passwordLabel);
             this.panelLeft.Controls.Add(this.usernameLabel);
             this.panelLeft.Controls.Add(this.loginLabel);
@@ -61,19 +57,18 @@
             this.panelLeft.Size = new System.Drawing.Size(353, 451);
             this.panelLeft.TabIndex = 6;
             // 
-            // btnClear
+            // btnLogin
             // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
-            this.btnClear.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(72, 285);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(91, 23);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.loginButton_Click);
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(194, 285);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(92, 23);
+            this.btnLogin.TabIndex = 7;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
             // 
             // passwordLabel
             // 
@@ -146,32 +141,6 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Course Management System\r\n";
             // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
-            this.btnExit.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(123, 348);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(105, 23);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = false;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(194, 285);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(92, 23);
-            this.btnLogin.TabIndex = 7;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,7 +162,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelLeft;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label loginLabel;
@@ -202,6 +170,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnExit;
     }
 }
