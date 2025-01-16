@@ -1,6 +1,6 @@
 ﻿namespace SDAM2_Assignment
 {
-    partial class USERINTERFACE
+    partial class userinterface
     {
         /// <summary>
         /// Required designer variable.

@@ -16,5 +16,10 @@ namespace SDAM2_Assignment
         {
             InitializeComponent();
         }
+
+        private void ui_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
