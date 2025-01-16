@@ -116,6 +116,7 @@
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(213, 20);
             this.password.TabIndex = 1;
+            this.password.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // username
             // 
@@ -157,6 +158,7 @@
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnClear
             // 
