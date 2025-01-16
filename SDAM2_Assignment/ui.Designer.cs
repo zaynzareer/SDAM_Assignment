@@ -38,8 +38,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -126,6 +126,15 @@
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(1, 220);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(230, 36);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "STUDENTS";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -136,21 +145,12 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(1, 220);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(230, 36);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "ENROLLMENTS";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1168, 637);
+            this.ClientSize = new System.Drawing.Size(990, 613);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.richTextBox1);
