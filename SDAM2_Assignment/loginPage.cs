@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> 898848e97115a176017ae09fab12e2a7fc645852
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +28,7 @@ namespace SDAM2_Assignment
         SqlConnection conn = new SqlConnection(connectionString);
 
         /// Event handler for the Login button click.
-        private void loginButton_Click(object sender, EventArgs e)
+        private void loginButton_Click(EventArgs e, object sender)
         {
             // Retrieve input from text boxes
             string usernametxt = username.Text.Trim();
@@ -88,4 +92,8 @@ namespace SDAM2_Assignment
 
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 898848e97115a176017ae09fab12e2a7fc645852

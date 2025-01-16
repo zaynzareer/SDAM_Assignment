@@ -100,7 +100,8 @@
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.loginButton_Click);
+            
+
             // 
             // passwordLabel
             // 

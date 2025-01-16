@@ -1,0 +1,5 @@
+C:\Users\abdpr\source\repos\SDAM_Assignment\sd\SDAM2_Assignment\obj\Debug\SDAM2_Assignment.csproj.AssemblyReference.cache
+C:\Users\abdpr\source\repos\SDAM_Assignment\sd\SDAM2_Assignment\obj\Debug\SDAM2_Assignment.LoginPage.resources
+C:\Users\abdpr\source\repos\SDAM_Assignment\sd\SDAM2_Assignment\obj\Debug\SDAM2_Assignment.Properties.Resources.resources
+C:\Users\abdpr\source\repos\SDAM_Assignment\sd\SDAM2_Assignment\obj\Debug\SDAM2_Assignment.csproj.GenerateResource.cache
+C:\Users\abdpr\source\repos\SDAM_Assignment\sd\SDAM2_Assignment\obj\Debug\SDAM2_Assignment.csproj.CoreCompileInputs.cache
