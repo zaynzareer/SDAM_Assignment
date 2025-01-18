@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,14 +14,15 @@ namespace SDAM2_Assignment
 {
     public partial class LoginPage : Form
     {
+        string connectionString;
+        SqlConnection conn;
         public LoginPage()
         {
             InitializeComponent();
+            connectionString = ConfigurationManager.ConnectionStrings["AzureSqlConnection"].ConnectionString;
+
+            conn = new SqlConnection(connectionString);
         }
-
-        string connectionString = ConfigurationManager.ConnectionStrings[""].ConnectionString;
-
-        SqlConnection conn = new SqlConnection(connectionString);
 
         /// Event handler for the Login button click.
         private void loginButton_Click(object sender, EventArgs e)
@@ -84,6 +85,11 @@ namespace SDAM2_Assignment
         }
 
         private void password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void username_TextChanged(object sender, EventArgs e)
         {
 
         }

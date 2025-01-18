@@ -60,7 +60,6 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(353, 451);
             this.panelLeft.TabIndex = 6;
-            this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
             // btnLogin
             // 
@@ -87,6 +86,7 @@
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnClear
             // 
@@ -154,6 +154,7 @@
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(213, 20);
             this.username.TabIndex = 0;
+            this.username.TextChanged += new System.EventHandler(this.username_TextChanged);
             // 
             // panel1
             // 
@@ -162,7 +163,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(531, 451);
             this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -174,34 +174,6 @@
             this.label1.Size = new System.Drawing.Size(364, 31);
             this.label1.TabIndex = 7;
             this.label1.Text = "Course Management System\r\n";
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
-            this.btnExit.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(123, 348);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(105, 23);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
-            this.btnClear.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(72, 285);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(91, 23);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // LoginPage
             // 
