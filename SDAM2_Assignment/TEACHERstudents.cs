@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SDAM2_Assignment
 {
-    public partial class userinterface: Form
+    public partial class TEACHERstudents : Form
     {
-        public userinterface()
+        public TEACHERstudents()
         {
             InitializeComponent();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

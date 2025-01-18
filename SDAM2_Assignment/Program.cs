@@ -19,4 +19,8 @@ namespace SDAM2_Assignment
             Application.Run(new LoginPage());
         }
     }
+
+    internal class form : Form
+    {
+    }
 }

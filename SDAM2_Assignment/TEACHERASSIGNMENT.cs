@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SDAM2_Assignment
 {
-    public partial class userinterface: Form
+    public partial class TEACHERASSIGNMENT : Form
     {
-        public userinterface()
+        public TEACHERASSIGNMENT()
         {
             InitializeComponent();
         }

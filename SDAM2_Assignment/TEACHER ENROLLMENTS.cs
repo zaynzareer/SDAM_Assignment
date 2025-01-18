@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SDAM2_Assignment
 {
-    public partial class userinterface: Form
+    public partial class ENROLLMENTS : Form
     {
-        public userinterface()
+        public ENROLLMENTS()
         {
             InitializeComponent();
+        }
+
+        private void ui_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
