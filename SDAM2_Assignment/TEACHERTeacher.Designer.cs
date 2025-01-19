@@ -164,7 +164,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ui";
             this.Text = "ui";
-            this.Load += new System.EventHandler(this.ui_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();

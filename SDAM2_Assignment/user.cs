@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace SDAM2_Assignment
 {
-    internal class user
+    internal class User
     {
-        public string name { get; set; } 
-        public string email { get; set; }
-        public int age { get; set; }
+        public string Name { get; set; } 
+        public int Age { get; set; }
+        public string Gender { get; set; }
+        public int Telephone { get; set; }
+
+        //constructor
+        public User(string name, int age, string gender, int telephone)
+        {
+            Name = name;
+            Age = age;
+            Gender = gender;
+            Telephone = telephone;
+        }
     }
 }

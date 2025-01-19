@@ -73,6 +73,7 @@
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnExit
             // 
@@ -100,8 +101,7 @@
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
-            
-
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // passwordLabel
             // 
@@ -141,6 +141,7 @@
             // 
             this.password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.password.ForeColor = System.Drawing.Color.White;
             this.password.Location = new System.Drawing.Point(72, 238);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(213, 20);
@@ -151,6 +152,7 @@
             // 
             this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.username.ForeColor = System.Drawing.Color.White;
             this.username.Location = new System.Drawing.Point(72, 171);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(213, 20);

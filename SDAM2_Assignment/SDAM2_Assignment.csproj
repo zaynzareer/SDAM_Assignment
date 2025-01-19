@@ -167,12 +167,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="instructor.cs" />
     <Compile Include="PERFOMANCEcs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PERFOMANCEcs.Designer.cs">
       <DependentUpon>PERFOMANCEcs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student.cs" />
     <Compile Include="TEACHER ENROLLMENTS.cs">
       <SubType>Form</SubType>
     </Compile>
