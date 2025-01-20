@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 898848e97115a176017ae09fab12e2a7fc645852
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,15 +24,31 @@ namespace SDAM2_Assignment
             conn = new SqlConnection(connectionString);
         }
 
-        /// Event handler for the Login button click.
-        private void loginButton_Click(EventArgs e, object sender)
+              
+
+        private void loginLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             // Retrieve input from text boxes
-            string usernametxt = username.Text.Trim();
-            string passwordtxt = password.Text.Trim();
+            string username = txtusername.Text.Trim();
+            string password = txtpassword.Text.Trim();
 
             // Validate input fields
-            if (string.IsNullOrWhiteSpace(usernametxt) || string.IsNullOrWhiteSpace(passwordtxt))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Please fill in both fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -48,9 +60,9 @@ namespace SDAM2_Assignment
                 conn.Open();
 
                 // Prepare SQL command with parameterized query to prevent SQL injection
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [LOGIN-page] WHERE username = @username AND password = @password", conn);
-                cmd.Parameters.AddWithValue("@username", usernametxt);
-                cmd.Parameters.AddWithValue("@password", passwordtxt);
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Credentials WHERE Usernames = @username AND Passwords = @password", conn);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", password);
 
                 // Execute the query and retrieve the result
                 int result = (int)cmd.ExecuteScalar();
@@ -75,26 +87,18 @@ namespace SDAM2_Assignment
                 // Ensure the database connection is closed
                 conn.Close();
             }
-
         }
-
-        private void loginLabel_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
-
+            txtusername.Clear();
+            txtpassword.Clear();
         }
 
+        /// Event handler for the Exit button click.
+        /// Closes the application.
         private void btnExit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void username_TextChanged(object sender, EventArgs e)
-        {
+            Application.Exit();
 
         }
     }

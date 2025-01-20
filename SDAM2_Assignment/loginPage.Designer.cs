@@ -36,8 +36,8 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.loginLabel = new System.Windows.Forms.Label();
-            this.password = new System.Windows.Forms.TextBox();
-            this.username = new System.Windows.Forms.TextBox();
+            this.txtpassword = new System.Windows.Forms.TextBox();
+            this.txtusername = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelLeft.SuspendLayout();
@@ -54,8 +54,8 @@
             this.panelLeft.Controls.Add(this.passwordLabel);
             this.panelLeft.Controls.Add(this.usernameLabel);
             this.panelLeft.Controls.Add(this.loginLabel);
-            this.panelLeft.Controls.Add(this.password);
-            this.panelLeft.Controls.Add(this.username);
+            this.panelLeft.Controls.Add(this.txtpassword);
+            this.panelLeft.Controls.Add(this.txtusername);
             this.panelLeft.Location = new System.Drawing.Point(448, 0);
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(353, 451);
@@ -67,9 +67,9 @@
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(194, 285);
+            this.btnLogin.Location = new System.Drawing.Point(72, 285);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(92, 23);
+            this.btnLogin.Size = new System.Drawing.Size(214, 23);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -81,9 +81,9 @@
             this.btnExit.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(123, 348);
+            this.btnExit.Location = new System.Drawing.Point(194, 348);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(105, 23);
+            this.btnExit.Size = new System.Drawing.Size(91, 23);
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -95,7 +95,7 @@
             this.btnClear.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(72, 285);
+            this.btnClear.Location = new System.Drawing.Point(72, 348);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(91, 23);
             this.btnClear.TabIndex = 5;
@@ -137,27 +137,27 @@
             this.loginLabel.Text = "LOGIN";
             this.loginLabel.Click += new System.EventHandler(this.loginLabel_Click);
             // 
-            // password
+            // txtpassword
             // 
-            this.password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.password.ForeColor = System.Drawing.Color.White;
-            this.password.Location = new System.Drawing.Point(72, 238);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(213, 20);
-            this.password.TabIndex = 1;
-            this.password.TextChanged += new System.EventHandler(this.password_TextChanged);
+            this.txtpassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtpassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpassword.ForeColor = System.Drawing.Color.White;
+            this.txtpassword.Location = new System.Drawing.Point(72, 238);
+            this.txtpassword.Name = "txtpassword";
+            this.txtpassword.Size = new System.Drawing.Size(213, 20);
+            this.txtpassword.TabIndex = 1;
+            this.txtpassword.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
-            // username
+            // txtusername
             // 
-            this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.username.ForeColor = System.Drawing.Color.White;
-            this.username.Location = new System.Drawing.Point(72, 171);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(213, 20);
-            this.username.TabIndex = 0;
-            this.username.TextChanged += new System.EventHandler(this.username_TextChanged);
+            this.txtusername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtusername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtusername.ForeColor = System.Drawing.Color.White;
+            this.txtusername.Location = new System.Drawing.Point(72, 171);
+            this.txtusername.Name = "txtusername";
+            this.txtusername.Size = new System.Drawing.Size(213, 20);
+            this.txtusername.TabIndex = 0;
+            this.txtusername.TextChanged += new System.EventHandler(this.username_TextChanged);
             // 
             // panel1
             // 
@@ -202,8 +202,8 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label loginLabel;
-        private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.TextBox username;
+        private System.Windows.Forms.TextBox txtpassword;
+        private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLogin;

@@ -21,5 +21,25 @@ namespace SDAM2_Assignment
         {
 
         }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnclear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

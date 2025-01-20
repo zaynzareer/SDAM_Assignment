@@ -56,7 +56,7 @@
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(272, 96);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(682, 193);
+            this.dataGridView4.Size = new System.Drawing.Size(703, 193);
             this.dataGridView4.TabIndex = 42;
             // 
             // button10
@@ -191,6 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1003, 576);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.button10);
