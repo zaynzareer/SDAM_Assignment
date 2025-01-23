@@ -167,6 +167,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Courses.cs" />
     <Compile Include="DatabaseHelper.cs" />
     <Compile Include="instructor.cs" />
     <Compile Include="PERFOMANCEcs.cs">
@@ -195,6 +196,12 @@
     </Compile>
     <Compile Include="TEACHERASSIGNMENT.Designer.cs">
       <DependentUpon>TEACHERASSIGNMENT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TEACHERCOURSES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEACHERCOURSES.Designer.cs">
+      <DependentUpon>TEACHERCOURSES.cs</DependentUpon>
     </Compile>
     <Compile Include="TEACHERstudents.cs">
       <SubType>Form</SubType>
@@ -242,6 +249,9 @@
     </Compile>
     <EmbeddedResource Include="TEACHERASSIGNMENT.resx">
       <DependentUpon>TEACHERASSIGNMENT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TEACHERCOURSES.resx">
+      <DependentUpon>TEACHERCOURSES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TEACHERstudents.resx">
       <DependentUpon>TEACHERstudents.cs</DependentUpon>

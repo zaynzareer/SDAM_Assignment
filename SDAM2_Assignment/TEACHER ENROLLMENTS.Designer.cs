@@ -1,6 +1,8 @@
-﻿namespace SDAM2_Assignment
+﻿using System.Windows.Forms;
+
+namespace SDAM2_Assignment
 {
-    partial class ENROLLMENTS
+    partial class ENROLLMENTS : Form
     {
         /// <summary>
         /// Required designer variable.

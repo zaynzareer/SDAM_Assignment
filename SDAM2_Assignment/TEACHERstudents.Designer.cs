@@ -1,6 +1,8 @@
-﻿namespace SDAM2_Assignment
+﻿using System.Windows.Forms;
+
+namespace SDAM2_Assignment
 {
-    partial class TEACHERstudents
+    partial class TEACHERstudents : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +37,6 @@
             this.btnRemoveStudent = new System.Windows.Forms.Button();
             this.btnRegisterStudent = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -59,13 +60,14 @@
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView3
@@ -82,7 +84,7 @@
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(301, -2);
+            this.dataGridView2.Location = new System.Drawing.Point(299, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(915, 69);
             this.dataGridView2.TabIndex = 13;
@@ -98,7 +100,7 @@
             // 
             // btnRemoveStudent
             // 
-            this.btnRemoveStudent.Location = new System.Drawing.Point(353, 24);
+            this.btnRemoveStudent.Location = new System.Drawing.Point(353, 26);
             this.btnRemoveStudent.Name = "btnRemoveStudent";
             this.btnRemoveStudent.Size = new System.Drawing.Size(137, 36);
             this.btnRemoveStudent.TabIndex = 23;
@@ -107,7 +109,7 @@
             // 
             // btnRegisterStudent
             // 
-            this.btnRegisterStudent.Location = new System.Drawing.Point(299, 551);
+            this.btnRegisterStudent.Location = new System.Drawing.Point(299, 515);
             this.btnRegisterStudent.Name = "btnRegisterStudent";
             this.btnRegisterStudent.Size = new System.Drawing.Size(137, 36);
             this.btnRegisterStudent.TabIndex = 24;
@@ -121,16 +123,7 @@
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(682, 193);
             this.dataGridView4.TabIndex = 27;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(255, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
+            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // button6
             // 
@@ -218,7 +211,7 @@
             // 
             // btnclear
             // 
-            this.btnclear.Location = new System.Drawing.Point(514, 24);
+            this.btnclear.Location = new System.Drawing.Point(514, 26);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(137, 36);
             this.btnclear.TabIndex = 35;
@@ -364,7 +357,7 @@
             this.panel3.Controls.Add(this.btnUpdateStudent);
             this.panel3.Controls.Add(this.btnRemoveStudent);
             this.panel3.Controls.Add(this.btnclear);
-            this.panel3.Location = new System.Drawing.Point(282, 527);
+            this.panel3.Location = new System.Drawing.Point(282, 491);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(682, 80);
             this.panel3.TabIndex = 52;
@@ -377,6 +370,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(682, 159);
             this.panel2.TabIndex = 51;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(5, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(255, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
             // TEACHERstudents
             // 
@@ -412,14 +415,15 @@
             this.Controls.Add(this.panel3);
             this.Name = "TEACHERstudents";
             this.Text = "students";
+            this.Load += new System.EventHandler(this.TEACHERstudents_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
