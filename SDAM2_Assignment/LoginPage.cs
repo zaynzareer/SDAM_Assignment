@@ -19,7 +19,7 @@ namespace SDAM2_Assignment
         public LoginPage()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["LocalSqlConnection"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["AzureSqlConnection"].ConnectionString;
 
             conn = new SqlConnection(connectionString);
         }
@@ -56,11 +56,11 @@ namespace SDAM2_Assignment
 
             try
             {
-                // Open the database 
+                // Open the database connection
                 conn.Open();
 
                 // Prepare SQL command with parameterized query to prevent SQL injection
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Credentials WHERE Username = @username AND Password = @password", conn);
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Credentials WHERE Usernames = @username AND Passwords = @password", conn);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);
 
@@ -71,10 +71,6 @@ namespace SDAM2_Assignment
                 if (result > 0)
                 {
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    TEACHERTeacher teacher = new TEACHERTeacher();
-                    teacher.Show(); 
-                    this.Hide();
                 }
                 else
                 {
@@ -103,11 +99,6 @@ namespace SDAM2_Assignment
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
-        }
-
-        private void panelLeft_Paint(object sender, PaintEventArgs e)
-        {
 
         }
     }
