@@ -11,7 +11,7 @@ namespace SDAM2_Assignment
     {
         public string Module { get; set; }
 
-        public Instructor(int id, string name, int age, string gender, int telephone, string city, string module) : base(id,name, age, gender, telephone, city)
+        public Instructor(string id, string name, int age, string gender, string telephone, string city, string module) : base(id,name, age, gender, telephone, city)
         {
             Module = module;
         }

@@ -8,15 +8,15 @@ namespace SDAM2_Assignment
 {
     internal class User
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; } 
         public int Age { get; set; }
         public string Gender { get; set; }
-        public int Telephone { get; set; }
+        public string Telephone { get; set; }
         public string City { get; set; }
 
         //constructor
-        public User(int id, string name, int age, string gender, int telephone, string city)
+        public User(string id, string name, int age, string gender, string telephone, string city)
         {
             Id = id;
             Name = name;

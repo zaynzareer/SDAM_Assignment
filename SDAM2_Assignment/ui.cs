@@ -21,5 +21,17 @@ namespace SDAM2_Assignment
         {
 
         }
+
+        private void btnStudentsPage_Click(object sender, EventArgs e)
+        {
+            TEACHERstudents studentpage = new TEACHERstudents();
+            studentpage.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

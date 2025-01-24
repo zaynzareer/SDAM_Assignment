@@ -55,7 +55,7 @@ namespace SDAM2_Assignment
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -73,6 +73,7 @@ namespace SDAM2_Assignment
             {
                 string sql = "DELETE FROM Students WHERE Id = @Id";
                 SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Id", studentId);
 
                 //opening a connection
                 conn.Open();
@@ -88,7 +89,7 @@ namespace SDAM2_Assignment
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -97,6 +98,7 @@ namespace SDAM2_Assignment
             return successful;
         }
 
+        //Update Students
         public bool UpdateStudent(Student student)
         {
             bool successful = false;
@@ -127,7 +129,7 @@ namespace SDAM2_Assignment
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -139,7 +141,9 @@ namespace SDAM2_Assignment
         //load Student details into datagridview
         public List<Student> loadStudents()
         {
+            //creating new student list
             List<Student> studentlist = new List<Student>();
+
             SqlConnection conn = new SqlConnection(connectionString);
             try
             {
@@ -152,18 +156,180 @@ namespace SDAM2_Assignment
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    Student student = new Student
+                    (
+                        reader["Id"].ToString(),
+                        reader["Name"].ToString(),
+                        Convert.ToInt32(reader["Age"]),
+                        reader["Gender"].ToString(),
+                        reader["Telephone"].ToString(),
+                        reader["City"].ToString()
+                    );
+                    studentlist.Add(student);
                 }
 
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 conn.Close();
             }
             return studentlist;
+        }
+
+        //---------------------------------------------------------------------------------------------
+        // Code for Couses
+
+        // Add Courses
+        public bool AddCourse(Course course)
+        {
+            bool successful = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                string sql = "INSERT INTO Courses(CourseID, CourseName, CourseHandout, CourseDeadline) VALUES(@CourseID, @CourseName, @CourseHandout, @CourseDeadline)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Addding para m eters
+                cmd.Parameters.AddWithValue("@CourseID", course.CourseID);
+                cmd.Parameters.AddWithValue("@CourseName", course.CourseName);
+                cmd.Parameters.AddWithValue("@CourseHandout", course.CourseHandout);
+                cmd.Parameters.AddWithValue("@CourseDeadline", course.CourseDeadline);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    successful = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return successful;
+        }
+
+
+        // Update Courses
+        public bool UpdateCourse(Course course)
+        {
+            bool successful = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                string sql = "UPDATE Courses SET CourseName = @CourseName, CourseHandout = @CourseHandout, CourseDeadline = @CourseDeadline WHERE CourseID = @CourseID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Add parameters
+                cmd.Parameters.AddWithValue("@CourseID", course.CourseID);
+                cmd.Parameters.AddWithValue("@CourseName", course.CourseName);
+                cmd.Parameters.AddWithValue("@CourseHandout", course.CourseHandout);
+                cmd.Parameters.AddWithValue("@CourseDeadline", course.CourseDeadline);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    successful = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return successful;
+        }
+
+
+        // Remove Course
+        public bool RemoveCourse(string courseID)
+        {
+            bool successful = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                string sql = "DELETE FROM Courses WHERE CourseID = @CourseID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Add parameter
+                cmd.Parameters.AddWithValue("@CourseID", courseID);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    successful = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return successful;
+        }
+
+
+        // Load Courses into a list
+        public List<Course> LoadCourses()
+        {
+            List<Course> courseList = new List<Course>();
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                string sql = "SELECT * FROM Courses";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Course course = new Course(
+                        reader["CourseID"].ToString(),
+                        reader["CourseName"].ToString(),
+                        Convert.ToDateTime(reader["CourseHandout"]),
+                        Convert.ToDateTime(reader["CourseDeadline"])
+                    );
+
+                    courseList.Add(course);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return courseList;
         }
     }
 }

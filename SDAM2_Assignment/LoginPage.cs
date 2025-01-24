@@ -71,6 +71,15 @@ namespace SDAM2_Assignment
                 if (result > 0)
                 {
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //ui dashboard = new ui();
+                    //dashboard.Show();
+                    //
+                    //TEACHERstudents tEACHERstudents = new TEACHERstudents();
+                    //tEACHERstudents.Show();
+                    //
+                    TeacherCourses coursesample = new TeacherCourses();
+                    coursesample.Show();
+                    this.Hide();
                 }
                 else
                 {

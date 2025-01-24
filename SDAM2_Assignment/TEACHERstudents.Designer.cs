@@ -34,12 +34,8 @@
             this.button7 = new System.Windows.Forms.Button();
             this.btnRemoveStudent = new System.Windows.Forms.Button();
             this.btnRegisterStudent = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnUpdateStudent = new System.Windows.Forms.Button();
@@ -59,9 +55,14 @@
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnStudentsPage = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -104,6 +105,7 @@
             this.btnRemoveStudent.TabIndex = 23;
             this.btnRemoveStudent.Text = "REMOVE STUDENTS";
             this.btnRemoveStudent.UseVisualStyleBackColor = true;
+            this.btnRemoveStudent.Click += new System.EventHandler(this.btnRemoveStudent_Click);
             // 
             // btnRegisterStudent
             // 
@@ -113,14 +115,16 @@
             this.btnRegisterStudent.TabIndex = 24;
             this.btnRegisterStudent.Text = "REGISTER STUDENTS";
             this.btnRegisterStudent.UseVisualStyleBackColor = true;
+            this.btnRegisterStudent.Click += new System.EventHandler(this.btnRegisterStudent_Click);
             // 
-            // dataGridView4
+            // dgvStudents
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(282, 95);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(682, 193);
-            this.dataGridView4.TabIndex = 27;
+            this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudents.Location = new System.Drawing.Point(282, 95);
+            this.dgvStudents.Name = "dgvStudents";
+            this.dgvStudents.Size = new System.Drawing.Size(682, 193);
+            this.dgvStudents.TabIndex = 27;
+            this.dgvStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellClick);
             // 
             // pictureBox1
             // 
@@ -131,58 +135,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.button6.Location = new System.Drawing.Point(4, 227);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(230, 36);
-            this.button6.TabIndex = 33;
-            this.button6.Text = "STUDENTS";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.button4.Location = new System.Drawing.Point(4, 355);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(230, 36);
-            this.button4.TabIndex = 32;
-            this.button4.Text = "ASSIGNMENTS";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.button3.Location = new System.Drawing.Point(4, 290);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(230, 36);
-            this.button3.TabIndex = 31;
-            this.button3.Text = "COURSES";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.button2.Location = new System.Drawing.Point(4, 168);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(230, 36);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "STUDENTS";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -214,7 +166,7 @@
             this.btnUpdateStudent.TabIndex = 34;
             this.btnUpdateStudent.Text = "UPDATE STUDENTS";
             this.btnUpdateStudent.UseVisualStyleBackColor = true;
-            this.btnUpdateStudent.Click += new System.EventHandler(this.button5_Click);
+            this.btnUpdateStudent.Click += new System.EventHandler(this.btnUpdateStudent_Click);
             // 
             // btnclear
             // 
@@ -245,25 +197,22 @@
             this.label2.Size = new System.Drawing.Size(18, 13);
             this.label2.TabIndex = 37;
             this.label2.Text = "ID";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtId
             // 
-            this.txtId.ForeColor = System.Drawing.Color.White;
+            this.txtId.ForeColor = System.Drawing.Color.Black;
             this.txtId.Location = new System.Drawing.Point(368, 345);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 38;
-            this.txtId.Text = "Name";
             // 
             // txtName
             // 
-            this.txtName.ForeColor = System.Drawing.Color.White;
+            this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.Location = new System.Drawing.Point(368, 393);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 40;
-            this.txtName.Text = "Name";
             // 
             // label3
             // 
@@ -278,12 +227,11 @@
             // 
             // txtAge
             // 
-            this.txtAge.ForeColor = System.Drawing.Color.White;
+            this.txtAge.ForeColor = System.Drawing.Color.Black;
             this.txtAge.Location = new System.Drawing.Point(368, 439);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(100, 20);
             this.txtAge.TabIndex = 42;
-            this.txtAge.Text = "Name";
             // 
             // label4
             // 
@@ -309,12 +257,11 @@
             // 
             // txtTelephone
             // 
-            this.txtTelephone.ForeColor = System.Drawing.Color.White;
+            this.txtTelephone.ForeColor = System.Drawing.Color.Black;
             this.txtTelephone.Location = new System.Drawing.Point(672, 390);
             this.txtTelephone.Name = "txtTelephone";
             this.txtTelephone.Size = new System.Drawing.Size(100, 20);
             this.txtTelephone.TabIndex = 46;
-            this.txtTelephone.Text = "Name";
             // 
             // label6
             // 
@@ -329,12 +276,11 @@
             // 
             // txtCity
             // 
-            this.txtCity.ForeColor = System.Drawing.Color.White;
+            this.txtCity.ForeColor = System.Drawing.Color.Black;
             this.txtCity.Location = new System.Drawing.Point(672, 439);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(100, 20);
             this.txtCity.TabIndex = 48;
-            this.txtCity.Text = "Name";
             // 
             // label7
             // 
@@ -378,12 +324,83 @@
             this.panel2.Size = new System.Drawing.Size(682, 159);
             this.panel2.TabIndex = 51;
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.button5.Location = new System.Drawing.Point(4, 164);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(230, 36);
+            this.button5.TabIndex = 57;
+            this.button5.Text = "ENROLLMENTS";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // btnStudentsPage
+            // 
+            this.btnStudentsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.btnStudentsPage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
+            this.btnStudentsPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudentsPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.btnStudentsPage.Location = new System.Drawing.Point(4, 222);
+            this.btnStudentsPage.Name = "btnStudentsPage";
+            this.btnStudentsPage.Size = new System.Drawing.Size(230, 36);
+            this.btnStudentsPage.TabIndex = 56;
+            this.btnStudentsPage.Text = "STUDENTS";
+            this.btnStudentsPage.UseVisualStyleBackColor = false;
+            this.btnStudentsPage.Click += new System.EventHandler(this.btnStudentsPage_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.button4.Location = new System.Drawing.Point(4, 350);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(230, 36);
+            this.button4.TabIndex = 55;
+            this.button4.Text = "ASSIGNMENTS";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.button3.Location = new System.Drawing.Point(4, 285);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(230, 36);
+            this.button3.TabIndex = 54;
+            this.button3.Text = "COURSES";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.button2.Location = new System.Drawing.Point(3, 411);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(230, 36);
+            this.button2.TabIndex = 53;
+            this.button2.Text = "PERFORMANCE REPORTS";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // TEACHERstudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(988, 623);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnStudentsPage);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.cmbGender);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtTelephone);
@@ -396,13 +413,9 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.btnRegisterStudent);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.pictureBox1);
@@ -414,7 +427,7 @@
             this.Text = "students";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -432,11 +445,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnRemoveStudent;
         private System.Windows.Forms.Button btnRegisterStudent;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnUpdateStudent;
@@ -456,5 +465,10 @@
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnStudentsPage;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
