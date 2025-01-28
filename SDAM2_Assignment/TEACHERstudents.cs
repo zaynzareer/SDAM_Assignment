@@ -172,5 +172,15 @@ namespace SDAM2_Assignment
             performance.Show();
             this.Hide();
         }
+
+        private void TEACHERstudents_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace SDAM2_Assignment
 {
     public partial class LoginPage : Form
     {
-        private string connectionString;
+        string connectionString;
         SqlConnection conn;
         public LoginPage()
         {

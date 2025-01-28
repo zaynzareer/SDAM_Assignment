@@ -1,6 +1,8 @@
-﻿namespace SDAM2_Assignment
+﻿using System.Windows.Forms;
+
+namespace SDAM2_Assignment
 {
-    partial class TEACHERstudents
+    partial class TEACHERstudents : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -83,7 +85,7 @@
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(301, -2);
+            this.dataGridView2.Location = new System.Drawing.Point(299, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(915, 69);
             this.dataGridView2.TabIndex = 13;
@@ -99,7 +101,7 @@
             // 
             // btnRemoveStudent
             // 
-            this.btnRemoveStudent.Location = new System.Drawing.Point(353, 24);
+            this.btnRemoveStudent.Location = new System.Drawing.Point(353, 26);
             this.btnRemoveStudent.Name = "btnRemoveStudent";
             this.btnRemoveStudent.Size = new System.Drawing.Size(137, 36);
             this.btnRemoveStudent.TabIndex = 23;
@@ -109,7 +111,7 @@
             // 
             // btnRegisterStudent
             // 
-            this.btnRegisterStudent.Location = new System.Drawing.Point(299, 551);
+            this.btnRegisterStudent.Location = new System.Drawing.Point(299, 515);
             this.btnRegisterStudent.Name = "btnRegisterStudent";
             this.btnRegisterStudent.Size = new System.Drawing.Size(137, 36);
             this.btnRegisterStudent.TabIndex = 24;
@@ -149,7 +151,7 @@
             // 
             // btnclear
             // 
-            this.btnclear.Location = new System.Drawing.Point(514, 24);
+            this.btnclear.Location = new System.Drawing.Point(514, 26);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(137, 36);
             this.btnclear.TabIndex = 35;
@@ -289,7 +291,7 @@
             this.panel3.Controls.Add(this.btnUpdateStudent);
             this.panel3.Controls.Add(this.btnRemoveStudent);
             this.panel3.Controls.Add(this.btnclear);
-            this.panel3.Location = new System.Drawing.Point(282, 527);
+            this.panel3.Location = new System.Drawing.Point(282, 491);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(682, 80);
             this.panel3.TabIndex = 52;
@@ -431,6 +433,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "TEACHERstudents";
             this.Text = "students";
+            this.Load += new System.EventHandler(this.TEACHERstudents_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();

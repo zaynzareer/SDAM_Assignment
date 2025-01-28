@@ -1,6 +1,8 @@
-﻿namespace SDAM2_Assignment
+﻿using System.Windows.Forms;
+
+namespace SDAM2_Assignment
 {
-    partial class TEACHERASSIGNMENT
+    partial class TEACHERASSIGNMENT : Form
     {
         /// <summary>
         /// Required designer variable.
