@@ -192,14 +192,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assignment.cs" />
+    <Compile Include="Enrollment.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="DatabaseHelper.cs" />
     <Compile Include="instructor.cs" />
-    <Compile Include="PERFOMANCEcs.cs">
+    <Compile Include="PERFOMANCE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PERFOMANCEcs.Designer.cs">
-      <DependentUpon>PERFOMANCEcs.cs</DependentUpon>
+    <Compile Include="PERFOMANCE.Designer.cs">
+      <DependentUpon>PERFOMANCE.cs</DependentUpon>
     </Compile>
     <Compile Include="SdamAssignmentDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -207,11 +209,11 @@
       <DependentUpon>SdamAssignmentDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Student.cs" />
-    <Compile Include="TEACHER ENROLLMENTS.cs">
+    <Compile Include="TEACHERENROLLMENTS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TEACHER ENROLLMENTS.Designer.cs">
-      <DependentUpon>TEACHER ENROLLMENTS.cs</DependentUpon>
+    <Compile Include="TEACHERENROLLMENTS.Designer.cs">
+      <DependentUpon>TEACHERENROLLMENTS.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -252,11 +254,11 @@
       <DependentUpon>ui.cs</DependentUpon>
     </Compile>
     <Compile Include="user.cs" />
-    <EmbeddedResource Include="PERFOMANCEcs.resx">
-      <DependentUpon>PERFOMANCEcs.cs</DependentUpon>
+    <EmbeddedResource Include="PERFOMANCE.resx">
+      <DependentUpon>PERFOMANCE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TEACHER ENROLLMENTS.resx">
-      <DependentUpon>TEACHER ENROLLMENTS.cs</DependentUpon>
+    <EmbeddedResource Include="TEACHERENROLLMENTS.resx">
+      <DependentUpon>TEACHERENROLLMENTS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>

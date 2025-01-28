@@ -10,18 +10,14 @@ using System.Windows.Forms;
 
 namespace SDAM2_Assignment
 {
-    public partial class ui : Form
+    public partial class PERFOMANCE : Form
     {
-        public ui()
+        public PERFOMANCE()
         {
             InitializeComponent();
         }
 
-        private void ui_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        //navigation buttons
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             ui ui = new ui();

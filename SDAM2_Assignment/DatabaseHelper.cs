@@ -258,7 +258,6 @@ namespace SDAM2_Assignment
             return successful;
         }
 
-
         // Remove Course
         public bool RemoveCourse(string courseID)
         {
@@ -330,6 +329,226 @@ namespace SDAM2_Assignment
             }
 
             return courseList;
+        }
+
+        //---------------------------------------------------------------------------------------------
+        // Code for Enrollment
+
+        //Update Enrollment 
+        public bool UpdateEnrollment(string enrollmentid, string status)
+        {
+            bool successful = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                string sql = "Update Enrollments SET Status = @Status WHERE EnrollmentID = @EnrollmentID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //Adding parameters
+                cmd.Parameters.AddWithValue("@Status", status);
+                cmd.Parameters.AddWithValue("@EnrollmentID", enrollmentid);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    successful = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return successful;            
+        }
+
+        //load enrollments
+        public List<Enrollment> LoadEnrollments()
+        {
+            List<Enrollment> enrollmentlist = new List<Enrollment>();
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                string sql = "SELECT * FROM Enrollments";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Enrollment enrollment = new Enrollment(
+                        reader["EnrollmentID"].ToString(),
+                        reader["StudentID"].ToString(),
+                        reader["StudentName"].ToString(),
+                        reader["Course"].ToString(),
+                        Convert.ToDateTime(reader["EnrollmentDate"]),
+                        reader["Status"].ToString()
+                    );
+                    enrollmentlist.Add( enrollment );
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return enrollmentlist;
+        }
+
+
+        //---------------------------------------------------------------------------------------------
+        // Code for ASSIGNMENTS
+
+        // Create Assignment
+        public bool CreateAssignment(Assignment assignment)
+        {
+            bool successful = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                string sql = "INSERT INTO Assignments (AssignmentID, AssignmentName, AssignmentHandout, AssignmentDeadline) " +
+                                "VALUES (@AssignmentID, @AssignmentName, @AssignmentHandout, @AssignmentDeadline)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Add parameters
+                cmd.Parameters.AddWithValue("@AssignmentID", assignment.AssignmentID);
+                cmd.Parameters.AddWithValue("@AssignmentName", assignment.AssignmentName);
+                cmd.Parameters.AddWithValue("@AssignmentHandout", assignment.AssignmentHandout);
+                cmd.Parameters.AddWithValue("@AssignmentDeadline", assignment.AssignmentDeadline);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    successful = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return successful;
+        }
+
+        // Update Assignment
+        public bool UpdateAssignment(Assignment assignment)
+        {
+            bool successful = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            
+            try
+            {
+                string sql = "UPDATE Assignments SET AssignmentName = @AssignmentName, AssignmentHandout = @AssignmentHandout, " +
+                                "AssignmentDeadline = @AssignmentDeadline WHERE AssignmentID = @AssignmentID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Add parameters
+                cmd.Parameters.AddWithValue("@AssignmentID", assignment.AssignmentID);
+                cmd.Parameters.AddWithValue("@AssignmentName", assignment.AssignmentName);
+                cmd.Parameters.AddWithValue("@AssignmentHandout", assignment.AssignmentHandout);
+                cmd.Parameters.AddWithValue("@AssignmentDeadline", assignment.AssignmentDeadline);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    successful = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return successful;
+        }
+
+        // Remove Assignment
+        public bool RemoveAssignment(string assignmentID)
+        {
+            bool successful = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            
+            try
+            {
+                string sql = "DELETE FROM Assignments WHERE AssignmentID = @AssignmentID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Add parameter
+                cmd.Parameters.AddWithValue("@AssignmentID", assignmentID);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    successful = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return successful;
+        }
+
+        // Load Assignments into a list
+        public List<Assignment> LoadAssignments()
+        {
+            List<Assignment> assignmentList = new List<Assignment>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            
+            try
+            {
+                string sql = "SELECT * FROM Assignments";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Assignment assignment = new Assignment(
+                        reader["AssignmentID"].ToString(),
+                        reader["AssignmentName"].ToString(),
+                        Convert.ToDateTime(reader["AssignmentHandout"]),
+                        Convert.ToDateTime(reader["AssignmentDeadline"])
+                    );
+
+                    assignmentList.Add(assignment);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return assignmentList;
         }
     }
 }

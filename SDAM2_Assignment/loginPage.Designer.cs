@@ -135,7 +135,6 @@
             this.loginLabel.Size = new System.Drawing.Size(99, 31);
             this.loginLabel.TabIndex = 2;
             this.loginLabel.Text = "LOGIN";
-            this.loginLabel.Click += new System.EventHandler(this.loginLabel_Click);
             // 
             // txtpassword
             // 
@@ -146,7 +145,6 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(213, 20);
             this.txtpassword.TabIndex = 1;
-            this.txtpassword.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // txtusername
             // 
@@ -157,7 +155,6 @@
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(213, 20);
             this.txtusername.TabIndex = 0;
-            this.txtusername.TextChanged += new System.EventHandler(this.username_TextChanged);
             // 
             // panel1
             // 

@@ -14,7 +14,7 @@ namespace SDAM2_Assignment
 {
     public partial class LoginPage : Form
     {
-        string connectionString;
+        private string connectionString;
         SqlConnection conn;
         public LoginPage()
         {
@@ -22,23 +22,6 @@ namespace SDAM2_Assignment
             connectionString = ConfigurationManager.ConnectionStrings["AzureSqlConnection"].ConnectionString;
 
             conn = new SqlConnection(connectionString);
-        }
-
-              
-
-        private void loginLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void username_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -71,6 +54,9 @@ namespace SDAM2_Assignment
                 if (result > 0)
                 {
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ui dashboard = new ui();
+                    dashboard.Show();
+                    this.Hide();
                 }
                 else
                 {

@@ -40,13 +40,6 @@ namespace SDAM2_Assignment
             dgvStudents.DataSource = studentlist;
         }
 
-        private void btnStudentsPage_Click(object sender, EventArgs e)
-        {
-            TEACHERstudents studentpage = new TEACHERstudents();
-            studentpage.Show();
-            this.Hide();
-        }
-
         private void btnRegisterStudent_Click(object sender, EventArgs e)
         {
             student = new Student
@@ -135,6 +128,49 @@ namespace SDAM2_Assignment
                 txtTelephone.Text = telephone;
                 txtCity.Text = city;
             }
+        }
+
+        //navigation buttons
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            ui ui = new ui();
+            ui.Show();
+            this.Hide();
+        }
+
+        private void btnCoursePage_Click(object sender, EventArgs e)
+        {
+            TeacherCourses courses = new TeacherCourses();
+            courses.Show();
+            this.Hide();
+        }
+
+        private void btnStudentsPage_Click(object sender, EventArgs e)
+        {
+            TEACHERstudents students = new TEACHERstudents();
+            students.Show();
+            this.Hide();
+        }
+
+        private void btnEnrollmentPage_Click(object sender, EventArgs e)
+        {
+            TEACHERENROLLMENTS enrollments = new TEACHERENROLLMENTS();
+            enrollments.Show();
+            this.Hide();
+        }
+
+        private void btnAssignmentPage_Click(object sender, EventArgs e)
+        {
+            TEACHERASSIGNMENT assignments = new TEACHERASSIGNMENT();
+            assignments.Show();
+            this.Hide();
+        }
+
+        private void btnPerformanceReportPage_Click(object sender, EventArgs e)
+        {
+            PERFOMANCE performance = new PERFOMANCE();
+            performance.Show();
+            this.Hide();
         }
     }
 }

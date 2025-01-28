@@ -24,23 +24,6 @@ namespace SDAM2_Assignment
             conn = new SqlConnection(connectionString);
         }
 
-              
-
-        private void loginLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Retrieve input from text boxes
@@ -71,14 +54,8 @@ namespace SDAM2_Assignment
                 if (result > 0)
                 {
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //ui dashboard = new ui();
-                    //dashboard.Show();
-                    //
-                    //TEACHERstudents tEACHERstudents = new TEACHERstudents();
-                    //tEACHERstudents.Show();
-                    //
-                    TeacherCourses coursesample = new TeacherCourses();
-                    coursesample.Show();
+                    ui dashboard = new ui();
+                    dashboard.Show();
                     this.Hide();
                 }
                 else
