@@ -87,5 +87,10 @@ namespace SDAM2_Assignment
             Application.Exit();
 
         }
+
+        private void panelLeft_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

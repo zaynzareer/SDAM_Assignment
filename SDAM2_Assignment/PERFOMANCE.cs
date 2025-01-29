@@ -27,7 +27,7 @@ namespace SDAM2_Assignment
 
         private void btnCoursePage_Click(object sender, EventArgs e)
         {
-            TeacherCourses courses = new TeacherCourses();
+            TEACHERCOURSES courses = new TEACHERCOURSES();
             courses.Show();
             this.Hide();
         }
@@ -58,6 +58,11 @@ namespace SDAM2_Assignment
             PERFOMANCE performance = new PERFOMANCE();
             performance.Show();
             this.Hide();
+        }
+
+        private void PERFOMANCE_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
