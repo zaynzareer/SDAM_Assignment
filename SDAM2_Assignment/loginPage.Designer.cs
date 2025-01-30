@@ -1,8 +1,6 @@
-﻿using System.Windows.Forms;
-
-namespace SDAM2_Assignment
+﻿namespace SDAM2_Assignment
 {
-    partial class LoginPage : System.Windows.Forms.Form
+    partial class LoginPage
     {
         /// <summary>
         /// Required designer variable.
@@ -62,7 +60,6 @@ namespace SDAM2_Assignment
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(353, 451);
             this.panelLeft.TabIndex = 6;
-            this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint_1);
             // 
             // btnLogin
             // 
@@ -209,6 +206,5 @@ namespace SDAM2_Assignment
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnClear;
-        private PaintEventHandler panelLeft_Paint;
     }
 }

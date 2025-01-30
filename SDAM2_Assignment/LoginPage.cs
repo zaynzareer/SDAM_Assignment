@@ -14,7 +14,7 @@ namespace SDAM2_Assignment
 {
     public partial class LoginPage : Form
     {
-        string connectionString;
+        private string connectionString;
         SqlConnection conn;
         public LoginPage()
         {
@@ -85,11 +85,6 @@ namespace SDAM2_Assignment
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
-        }
-
-        private void panelLeft_Paint_1(object sender, PaintEventArgs e)
-        {
 
         }
     }

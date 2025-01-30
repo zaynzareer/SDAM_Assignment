@@ -1,8 +1,6 @@
-﻿using System.Windows.Forms;
-
-namespace SDAM2_Assignment
+﻿namespace SDAM2_Assignment
 {
-    partial class TEACHERASSIGNMENT : Form
+    partial class TEACHERASSIGNMENT
     {
         /// <summary>
         /// Required designer variable.
@@ -80,7 +78,6 @@ namespace SDAM2_Assignment
             this.dgvAssignment.Size = new System.Drawing.Size(703, 193);
             this.dgvAssignment.TabIndex = 42;
             this.dgvAssignment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssignment_CellClick);
-            this.dgvAssignment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssignment_CellContentClick);
             // 
             // btnUpdateAssignment
             // 

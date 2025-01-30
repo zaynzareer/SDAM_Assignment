@@ -31,7 +31,7 @@ namespace SDAM2_Assignment
 
         private void btnCoursePage_Click(object sender, EventArgs e)
         {
-            TEACHERCOURSES courses = new TEACHERCOURSES();
+            TeacherCourses courses = new TeacherCourses();
             courses.Show();
             this.Hide();
         }

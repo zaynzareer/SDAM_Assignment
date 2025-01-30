@@ -1,8 +1,6 @@
-﻿using System.Windows.Forms;
-
-namespace SDAM2_Assignment
+﻿namespace SDAM2_Assignment
 {
-    partial class ui : Form
+    partial class ui
     {
         /// <summary>
         /// Required designer variable.

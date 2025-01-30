@@ -127,7 +127,7 @@ namespace SDAM2_Assignment
 
         private void btnCoursePage_Click(object sender, EventArgs e)
         {
-            TEACHERCOURSES courses = new TEACHERCOURSES();
+            TeacherCourses courses = new TeacherCourses();
             courses.Show();
             this.Hide();
         }
@@ -158,11 +158,6 @@ namespace SDAM2_Assignment
             PERFOMANCE performance = new PERFOMANCE();
             performance.Show();
             this.Hide();
-        }
-
-        private void dgvAssignment_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }    
 }

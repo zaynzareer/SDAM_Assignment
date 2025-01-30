@@ -6,45 +6,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.Sql;
 
 namespace SDAM2_Assignment
 {
     internal class DatabaseHelper
     {
-        private List<Student> studentList;
-
-        // Connection strings for both Students and Courses databases zayn change this one  to your databse
-        public string StudentsDbConnectionString => ConfigurationManager.ConnectionStrings["StudentsDatabase"].ConnectionString;
-        public string CoursesDbConnectionString => ConfigurationManager.ConnectionStrings["CoursesDatabase"].ConnectionString;
-
         private string connectionString { get; }
-
+        
         public DatabaseHelper()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["LocalSqlConnection"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["AzureSqlConnection"].ConnectionString;
         }
 
-        // Add Students
+        //Add Students
         public bool AddStudent(Student student)
         {
             bool successful = false;
-            
+            //establish new sql connection
             SqlConnection conn = new SqlConnection(connectionString);
 
             try
             {
                 string sql = "INSERT INTO Students(Id, Name, Age, Gender, Telephone, City) VALUES(@Id, @Name, @Age, @Gender, @Telephone, @City)";
-                
+                //creating sql command
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                
+                //create parameters to add data
                 cmd.Parameters.AddWithValue("@Id", student.Id);
                 cmd.Parameters.AddWithValue("@Name", student.Name);
                 cmd.Parameters.AddWithValue("@Age", student.Age);
                 cmd.Parameters.AddWithValue("@Gender", student.Gender);
                 cmd.Parameters.AddWithValue("@Telephone", student.Telephone);
-                cmd.Parameters.AddWithValue("@City", student.City);
+                cmd.Parameters.AddWithValue("@city", student.City);
 
-                
+                //opening a connection
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
 
@@ -56,7 +51,7 @@ namespace SDAM2_Assignment
                 {
                     successful = false;
                 }
-            }
+            }   
 
             catch (Exception ex)
             {
@@ -69,7 +64,7 @@ namespace SDAM2_Assignment
             return successful;
         }
 
-        // Delete Students
+        //Delete Students
         public bool DeleteStudent(string studentId)
         {
             bool successful = false;
@@ -80,9 +75,7 @@ namespace SDAM2_Assignment
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@Id", studentId);
 
-                cmd.Parameters.AddWithValue("@Id", studentId);
-
-                
+                //opening a connection
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
                 if (rows > 0)
@@ -121,7 +114,7 @@ namespace SDAM2_Assignment
                 cmd.Parameters.AddWithValue("@Age", student.Age);
                 cmd.Parameters.AddWithValue("@Gender", student.Gender);
                 cmd.Parameters.AddWithValue("@Telephone", student.Telephone);
-                cmd.Parameters.AddWithValue("@City", student.City);
+                cmd.Parameters.AddWithValue("@city", student.City);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -145,8 +138,8 @@ namespace SDAM2_Assignment
             return successful;
         }
 
-        //  Student details to DataGridView
-        public List<Student> LoadStudents()
+        //load Student details into datagridview
+        public List<Student> loadStudents()
         {
             //creating new student list
             List<Student> studentlist = new List<Student>();
@@ -176,22 +169,25 @@ namespace SDAM2_Assignment
                 }
 
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 conn.Close();
             }
-            return studentList;
+            return studentlist;
         }
 
-        // Add Course
+        //---------------------------------------------------------------------------------------------
+        // Code for Couses
+
+        // Add Courses
         public bool AddCourse(Course course)
         {
             bool successful = false;
-            SqlConnection conn = new SqlConnection(CoursesDbConnectionString);
+            SqlConnection conn = new SqlConnection(connectionString);
 
             try
             {
@@ -214,7 +210,7 @@ namespace SDAM2_Assignment
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -224,11 +220,12 @@ namespace SDAM2_Assignment
             return successful;
         }
 
-        // Update Course functi
+
+        // Update Courses
         public bool UpdateCourse(Course course)
         {
             bool successful = false;
-            SqlConnection conn = new SqlConnection(CoursesDbConnectionString);
+            SqlConnection conn = new SqlConnection(connectionString);
 
             try
             {
@@ -251,7 +248,7 @@ namespace SDAM2_Assignment
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -262,10 +259,10 @@ namespace SDAM2_Assignment
         }
 
         // Remove Course
-        public bool RemoveCourse(int courseID)
+        public bool RemoveCourse(string courseID)
         {
             bool successful = false;
-            SqlConnection conn = new SqlConnection(CoursesDbConnectionString);
+            SqlConnection conn = new SqlConnection(connectionString);
 
             try
             {
@@ -285,7 +282,7 @@ namespace SDAM2_Assignment
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -295,7 +292,6 @@ namespace SDAM2_Assignment
             return successful;
         }
 
-       
 
         // Load Courses into a list
         public List<Course> LoadCourses()
@@ -553,11 +549,6 @@ namespace SDAM2_Assignment
                 conn.Close();
             }
             return assignmentList;
-        }
-
-        internal List<Student> loadStudents()
-        {
-            throw new NotImplementedException();
         }
     }
 }
