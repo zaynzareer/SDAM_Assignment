@@ -229,6 +229,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "PERFOMANCE";
             this.Text = "PERFOMANCEcs";
+            this.Load += new System.EventHandler(this.PERFOMANCE_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

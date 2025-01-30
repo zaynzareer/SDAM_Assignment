@@ -1,6 +1,6 @@
 ﻿namespace SDAM2_Assignment
 {
-    partial class TEACHERENROLLMENTS
+    partial class TEACHERENROLLMENTS 
     {
         /// <summary>
         /// Required designer variable.

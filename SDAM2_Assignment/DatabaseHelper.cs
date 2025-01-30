@@ -11,6 +11,8 @@ namespace SDAM2_Assignment
 {
     internal class DatabaseHelper
     {
+        private List<Student> studentList;
+
         // Connection strings for both Students and Courses databases zayn change this one  to your databse
         public string StudentsDbConnectionString => ConfigurationManager.ConnectionStrings["StudentsDatabase"].ConnectionString;
         public string CoursesDbConnectionString => ConfigurationManager.ConnectionStrings["CoursesDatabase"].ConnectionString;
@@ -293,156 +295,7 @@ namespace SDAM2_Assignment
             return successful;
         }
 
-        // Load Courses into a list
-        public List<Course> LoadCourses()
-        {
-            List<Course> courseList = new List<Course>();
-            SqlConnection conn = new SqlConnection(CoursesDbConnectionString);
-
-            try
-            {
-                string sql = "SELECT * FROM Courses";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    Course course = new Course(
-                        Convert.ToInt32(reader["CourseID"]),
-                        reader["CourseName"].ToString(),
-                        Convert.ToInt32(reader["CourseHandout"]),
-                        reader["CourseDeadline"].ToString()
-                    );
-
-                    courseList.Add(course);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return courseList;
-        }
-
-        //---------------------------------------------------------------------------------------------
-        // Code for Couses
-
-        // Add Courses
-        public bool AddCourse(Course course)
-        {
-            bool successful = false;
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            try
-            {
-                string sql = "INSERT INTO Courses(CourseID, CourseName, CourseHandout, CourseDeadline) VALUES(@CourseID, @CourseName, @CourseHandout, @CourseDeadline)";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-
-                // Addding para m eters
-                cmd.Parameters.AddWithValue("@CourseID", course.CourseID);
-                cmd.Parameters.AddWithValue("@CourseName", course.CourseName);
-                cmd.Parameters.AddWithValue("@CourseHandout", course.CourseHandout);
-                cmd.Parameters.AddWithValue("@CourseDeadline", course.CourseDeadline);
-
-                conn.Open();
-                int rows = cmd.ExecuteNonQuery();
-
-                if (rows > 0)
-                {
-                    successful = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return successful;
-        }
-
-
-        // Update Courses
-        public bool UpdateCourse(Course course)
-        {
-            bool successful = false;
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            try
-            {
-                string sql = "UPDATE Courses SET CourseName = @CourseName, CourseHandout = @CourseHandout, CourseDeadline = @CourseDeadline WHERE CourseID = @CourseID";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-
-                // Add parameters
-                cmd.Parameters.AddWithValue("@CourseID", course.CourseID);
-                cmd.Parameters.AddWithValue("@CourseName", course.CourseName);
-                cmd.Parameters.AddWithValue("@CourseHandout", course.CourseHandout);
-                cmd.Parameters.AddWithValue("@CourseDeadline", course.CourseDeadline);
-
-                conn.Open();
-                int rows = cmd.ExecuteNonQuery();
-
-                if (rows > 0)
-                {
-                    successful = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return successful;
-        }
-
-        // Remove Course
-        public bool RemoveCourse(string courseID)
-        {
-            bool successful = false;
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            try
-            {
-                string sql = "DELETE FROM Courses WHERE CourseID = @CourseID";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-
-                // Add parameter
-                cmd.Parameters.AddWithValue("@CourseID", courseID);
-
-                conn.Open();
-                int rows = cmd.ExecuteNonQuery();
-
-                if (rows > 0)
-                {
-                    successful = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return successful;
-        }
-
+       
 
         // Load Courses into a list
         public List<Course> LoadCourses()
@@ -700,6 +553,11 @@ namespace SDAM2_Assignment
                 conn.Close();
             }
             return assignmentList;
+        }
+
+        internal List<Student> loadStudents()
+        {
+            throw new NotImplementedException();
         }
     }
 }
