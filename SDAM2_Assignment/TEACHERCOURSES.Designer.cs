@@ -259,6 +259,7 @@
             this.btnUpdateStudent1.TabIndex = 34;
             this.btnUpdateStudent1.Text = "UPDATE COURSES";
             this.btnUpdateStudent1.UseVisualStyleBackColor = true;
+            this.btnUpdateStudent1.Click += new System.EventHandler(this.btnUpdateStudent1_Click);
             // 
             // btnRemoveStudent1
             // 

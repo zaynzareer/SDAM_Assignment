@@ -16,5 +16,10 @@ namespace SDAM2_Assignment
         {
             InitializeComponent();
         }
+
+        private void btnUpdateStudent1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
