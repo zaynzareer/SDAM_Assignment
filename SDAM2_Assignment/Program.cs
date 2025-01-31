@@ -14,11 +14,7 @@ namespace SDAM2_Assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginPage());
+            Application.Run(new LoginPageInstructor());
         }
-    }
-
-    internal class form : Form
-    {
     }
 }
