@@ -1,4 +1,4 @@
-﻿namespace SDAM2_Assignment
+﻿namespace SDAM2_Assignment.Instructor
 {
     partial class TeacherCourses
     {

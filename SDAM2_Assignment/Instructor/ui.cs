@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SDAM2_Assignment.Classes;
 
-namespace SDAM2_Assignment
+namespace SDAM2_Assignment.Instructor
 {
     public partial class ui : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace SDAM2_Assignment
+﻿namespace SDAM2_Assignment.Instructor
 {
     partial class PERFOMANCE
     {
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PERFOMANCE));
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.button9 = new System.Windows.Forms.Button();
+            this.dgvPerformance = new System.Windows.Forms.DataGridView();
+            this.btnGeneratePerformance = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -47,9 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerformance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,22 +55,24 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView4
+            // dgvPerformance
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(279, 269);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(682, 193);
-            this.dataGridView4.TabIndex = 42;
+            this.dgvPerformance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPerformance.Location = new System.Drawing.Point(279, 269);
+            this.dgvPerformance.Name = "dgvPerformance";
+            this.dgvPerformance.Size = new System.Drawing.Size(682, 193);
+            this.dgvPerformance.TabIndex = 42;
+            this.dgvPerformance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerformance_CellContentClick);
             // 
-            // button9
+            // btnGeneratePerformance
             // 
-            this.button9.Location = new System.Drawing.Point(479, 45);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(167, 36);
-            this.button9.TabIndex = 40;
-            this.button9.Text = "GENERATE  PERFOMANCE";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnGeneratePerformance.Location = new System.Drawing.Point(426, 41);
+            this.btnGeneratePerformance.Name = "btnGeneratePerformance";
+            this.btnGeneratePerformance.Size = new System.Drawing.Size(167, 36);
+            this.btnGeneratePerformance.TabIndex = 40;
+            this.btnGeneratePerformance.Text = "GENERATE  PERFOMANCE";
+            this.btnGeneratePerformance.UseVisualStyleBackColor = true;
+            this.btnGeneratePerformance.Click += new System.EventHandler(this.btnGeneratePerformance_Click);
             // 
             // button7
             // 
@@ -210,11 +210,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtId);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button9);
+            this.panel1.Controls.Add(this.btnGeneratePerformance);
             this.panel1.Location = new System.Drawing.Point(290, 124);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(671, 117);
@@ -258,25 +256,6 @@
             this.label2.TabIndex = 43;
             this.label2.Text = "ID";
             // 
-            // textBox2
-            // 
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(295, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 52;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(215, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 51;
-            this.label4.Text = "Performance";
-            // 
             // PERFOMANCE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,7 +269,7 @@
             this.Controls.Add(this.btnPerformanceReportPage);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.dgvPerformance);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView3);
@@ -298,7 +277,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "PERFOMANCE";
             this.Text = " ";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerformance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -311,8 +290,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.DataGridView dgvPerformance;
+        private System.Windows.Forms.Button btnGeneratePerformance;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView3;
@@ -327,8 +306,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label2;
     }

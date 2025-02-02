@@ -7,8 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.Sql;
+using SDAM2_Assignment.Students;
 
-namespace SDAM2_Assignment
+namespace SDAM2_Assignment.Classes
 {
     internal class DatabaseHelper
     {
@@ -20,7 +21,7 @@ namespace SDAM2_Assignment
         }
 
         //Add Students
-        public bool AddStudent(Student student)
+        public bool AddStudent(Student student, string username, string password)
         {
             bool successful = false;
             //establish new sql connection
@@ -28,29 +29,40 @@ namespace SDAM2_Assignment
 
             try
             {
-                string sql = "INSERT INTO Students(Id, Name, Age, Gender, Telephone, City) VALUES(@Id, @Name, @Age, @Gender, @Telephone, @City)";
-                //creating sql command
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                //create parameters to add data
-                cmd.Parameters.AddWithValue("@Id", student.Id);
-                cmd.Parameters.AddWithValue("@Name", student.Name);
-                cmd.Parameters.AddWithValue("@Age", student.Age);
-                cmd.Parameters.AddWithValue("@Gender", student.Gender);
-                cmd.Parameters.AddWithValue("@Telephone", student.Telephone);
-                cmd.Parameters.AddWithValue("@city", student.City);
-
-                //opening a connection
+                // Start a transaction
                 conn.Open();
-                int rows = cmd.ExecuteNonQuery();
+                SqlTransaction transaction = conn.BeginTransaction();
 
-                if (rows > 0)
+                // Insert into Students table
+                string sqlStudent = "INSERT INTO Students(Id, Name, Age, Gender, Telephone, City) VALUES(@Id, @Name, @Age, @Gender, @Telephone, @City)";
+                SqlCommand cmdStudent = new SqlCommand(sqlStudent, conn, transaction);
+                cmdStudent.Parameters.AddWithValue("@Id", student.Id);
+                cmdStudent.Parameters.AddWithValue("@Name", student.Name);
+                cmdStudent.Parameters.AddWithValue("@Age", student.Age);
+                cmdStudent.Parameters.AddWithValue("@Gender", student.Gender);
+                cmdStudent.Parameters.AddWithValue("@Telephone", student.Telephone);
+                cmdStudent.Parameters.AddWithValue("@City", student.City);
+
+                int studentRows = cmdStudent.ExecuteNonQuery();
+
+                if (studentRows > 0)
                 {
-                    successful = true;
+                    // Insert into Credentials table
+                    string sqlCredentials = "INSERT INTO Credentials(StudentId, Usernames, Passwords) VALUES(@StudentId, @Usernames, @Passwords)";
+                    SqlCommand cmdCredentials = new SqlCommand(sqlCredentials, conn, transaction);
+                    cmdCredentials.Parameters.AddWithValue("@StudentId", student.Id);
+                    cmdCredentials.Parameters.AddWithValue("@Usernames", username);
+                    cmdCredentials.Parameters.AddWithValue("@Passwords", password);
+
+                    int credentialRows = cmdCredentials.ExecuteNonQuery();
+
+                    if (credentialRows > 0)
+                    {
+                        successful = true;
+                    }
                 }
-                else
-                {
-                    successful = false;
-                }
+                // Commit the transaction
+                transaction.Commit();
             }   
 
             catch (Exception ex)
@@ -71,20 +83,33 @@ namespace SDAM2_Assignment
             SqlConnection conn = new SqlConnection(connectionString);
             try
             {
-                string sql = "DELETE FROM Students WHERE Id = @Id";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@Id", studentId);
-
-                //opening a connection
+                // Start a transaction
                 conn.Open();
-                int rows = cmd.ExecuteNonQuery();
-                if (rows > 0)
+                SqlTransaction transaction = conn.BeginTransaction();
+
+                // Delete from Credentials table
+                string sqlCredentials = "DELETE FROM Credentials WHERE StudentId = @StudentId";
+                SqlCommand cmdCredentials = new SqlCommand(sqlCredentials, conn, transaction);
+                cmdCredentials.Parameters.AddWithValue("@StudentId", studentId);
+
+                int credentialRows = cmdCredentials.ExecuteNonQuery();
+
+                // Delete from Students table
+                string sqlStudents = "DELETE FROM Students WHERE Id = @Id";
+                SqlCommand cmdStudents = new SqlCommand(sqlStudents, conn, transaction);
+                cmdStudents.Parameters.AddWithValue("@Id", studentId);
+
+                int studentRows = cmdStudents.ExecuteNonQuery();
+
+                // Check if both deletions were successful
+                if (credentialRows > 0 && studentRows > 0)
                 {
                     successful = true;
+                    transaction.Commit(); // Commit the transaction if both deletions were successful
                 }
                 else
                 {
-                    successful = false;
+                    transaction.Rollback(); // Rollback the transaction if any deletion failed
                 }
             }
             catch (Exception ex)
@@ -99,33 +124,46 @@ namespace SDAM2_Assignment
         }
 
         //Update Students
-        public bool UpdateStudent(Student student)
+        public bool UpdateStudent(Student student, string username)
         {
             bool successful = false;
             SqlConnection conn = new SqlConnection(connectionString);
 
             try
             {
-                string sql = "UPDATE Students SET Name = @Name, Age = @Age, Gender = @Gender, Telephone = @Telephone, City = @City WHERE Id = @Id";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-
-                cmd.Parameters.AddWithValue("@Id", student.Id);
-                cmd.Parameters.AddWithValue("@Name", student.Name);
-                cmd.Parameters.AddWithValue("@Age", student.Age);
-                cmd.Parameters.AddWithValue("@Gender", student.Gender);
-                cmd.Parameters.AddWithValue("@Telephone", student.Telephone);
-                cmd.Parameters.AddWithValue("@city", student.City);
-
+                // Start a transaction
                 conn.Open();
-                int rows = cmd.ExecuteNonQuery();
-                if (rows > 0)
+                SqlTransaction transaction = conn.BeginTransaction();
+
+                // Update Students table
+                string sqlStudent = "UPDATE Students SET Name = @Name, Age = @Age, Gender = @Gender, Telephone = @Telephone, City = @City WHERE Id = @Id";
+                SqlCommand cmdStudent = new SqlCommand(sqlStudent, conn, transaction);
+
+                cmdStudent.Parameters.AddWithValue("@Id", student.Id);
+                cmdStudent.Parameters.AddWithValue("@Name", student.Name);
+                cmdStudent.Parameters.AddWithValue("@Age", student.Age);
+                cmdStudent.Parameters.AddWithValue("@Gender", student.Gender);
+                cmdStudent.Parameters.AddWithValue("@Telephone", student.Telephone);
+                cmdStudent.Parameters.AddWithValue("@City", student.City);
+
+                int studentRows = cmdStudent.ExecuteNonQuery();
+
+                // Update Credentials table
+                string sqlCredentials = "UPDATE Credentials SET Usernames = @Username WHERE StudentId = @StudentId";
+                SqlCommand cmdCredentials = new SqlCommand(sqlCredentials, conn, transaction);
+                cmdCredentials.Parameters.AddWithValue("@Username", username);
+                cmdCredentials.Parameters.AddWithValue("@StudentId", student.Id);
+
+                int credentialRows = cmdCredentials.ExecuteNonQuery();
+
+                // Check if both updates were successful
+                if (studentRows > 0 && credentialRows > 0)
                 {
                     successful = true;
                 }
-                else
-                {
-                    successful = false;
-                }
+
+                // Commit the transaction
+                transaction.Commit();
             }
             catch (Exception ex)
             {
@@ -389,7 +427,10 @@ namespace SDAM2_Assignment
                         reader["StudentName"].ToString(),
                         reader["Course"].ToString(),
                         Convert.ToDateTime(reader["EnrollmentDate"]),
-                        reader["Status"].ToString()
+                        reader["Status"].ToString(),
+                        0,
+                        "",
+                        ""
                     );
                     enrollmentlist.Add( enrollment );
                 }
@@ -418,8 +459,8 @@ namespace SDAM2_Assignment
 
             try
             {
-                string sql = "INSERT INTO Assignments (AssignmentID, AssignmentName, AssignmentHandout, AssignmentDeadline) " +
-                                "VALUES (@AssignmentID, @AssignmentName, @AssignmentHandout, @AssignmentDeadline)";
+                string sql = "INSERT INTO Assignments (AssignmentID, AssignmentName, AssignmentHandout, AssignmentDeadline, CourseID) " +
+                                "VALUES (@AssignmentID, @AssignmentName, @AssignmentHandout, @AssignmentDeadline, @CourseID)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 // Add parameters
@@ -427,6 +468,7 @@ namespace SDAM2_Assignment
                 cmd.Parameters.AddWithValue("@AssignmentName", assignment.AssignmentName);
                 cmd.Parameters.AddWithValue("@AssignmentHandout", assignment.AssignmentHandout);
                 cmd.Parameters.AddWithValue("@AssignmentDeadline", assignment.AssignmentDeadline);
+                cmd.Parameters.AddWithValue("@CourseID", assignment.CourseID);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -455,7 +497,7 @@ namespace SDAM2_Assignment
             try
             {
                 string sql = "UPDATE Assignments SET AssignmentName = @AssignmentName, AssignmentHandout = @AssignmentHandout, " +
-                                "AssignmentDeadline = @AssignmentDeadline WHERE AssignmentID = @AssignmentID";
+                                "AssignmentDeadline = @AssignmentDeadline, CourseID = @CourseID WHERE AssignmentID = @AssignmentID";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 // Add parameters
@@ -463,6 +505,7 @@ namespace SDAM2_Assignment
                 cmd.Parameters.AddWithValue("@AssignmentName", assignment.AssignmentName);
                 cmd.Parameters.AddWithValue("@AssignmentHandout", assignment.AssignmentHandout);
                 cmd.Parameters.AddWithValue("@AssignmentDeadline", assignment.AssignmentDeadline);
+                cmd.Parameters.AddWithValue("@CourseID", assignment.CourseID);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -534,7 +577,8 @@ namespace SDAM2_Assignment
                         reader["AssignmentID"].ToString(),
                         reader["AssignmentName"].ToString(),
                         Convert.ToDateTime(reader["AssignmentHandout"]),
-                        Convert.ToDateTime(reader["AssignmentDeadline"])
+                        Convert.ToDateTime(reader["AssignmentDeadline"]),
+                        reader["CourseID"].ToString()
                     );
 
                     assignmentList.Add(assignment);
@@ -549,6 +593,91 @@ namespace SDAM2_Assignment
                 conn.Close();
             }
             return assignmentList;
+        }
+
+        //---------------------------------------------------------------------------------------------
+        //Code for Performance
+
+        //Get student performance info
+        public List<Performance> GetStudentPerformance()
+        {
+            List<Performance> performanceList = new List<Performance>();
+            SqlConnection conn = new SqlConnection(connectionString);
+   
+            try
+            {
+                string sql = @"
+                SELECT e.StudentID, 
+                        s.Name, 
+                        e.Course, 
+                        e.Progress, 
+                        e.CompletionStatus 
+                FROM Enrollments e 
+                JOIN Students s ON e.StudentID = s.Id";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Performance performance = new Performance
+                    {
+                        StudentID = reader["StudentID"].ToString(),
+                        StudentName = reader["Name"].ToString(),
+                        Course = reader["Course"].ToString(),
+                        Progress = Convert.ToInt32(reader["Progress"]),
+                        CompletionStatus = reader["CompletionStatus"].ToString()
+                    };
+                    performanceList.Add(performance);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return performanceList;
+        }
+        public List<Performance> GetStudentPerformance(string studentId)
+        {
+            List<Performance> performanceList = new List<Performance>();
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                string sql = @"
+                SELECT e.StudentID, 
+                        s.Name, 
+                        e.Course, 
+                        e.Progress, 
+                        e.CompletionStatus 
+                FROM Enrollments e 
+                JOIN Students s ON e.StudentID = s.Id 
+                WHERE e.StudentID = @StudentID";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@StudentID", studentId);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Performance performance = new Performance
+                    {
+                        StudentID = reader["StudentID"].ToString(),
+                        StudentName = reader["Name"].ToString(),
+                        Course = reader["Course"].ToString(),
+                        Progress = Convert.ToInt32(reader["Progress"]),
+                        CompletionStatus = reader["CompletionStatus"].ToString()
+                    };
+                    performanceList.Add(performance);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return performanceList;
         }
     }
 }

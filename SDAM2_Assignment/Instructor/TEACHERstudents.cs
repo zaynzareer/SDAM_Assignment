@@ -8,8 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SDAM2_Assignment.Classes;
 
-namespace SDAM2_Assignment
+namespace SDAM2_Assignment.Instructor
 {
     public partial class TEACHERstudents : Form
     {
@@ -32,6 +33,7 @@ namespace SDAM2_Assignment
             cmbGender.SelectedIndex = -1;
             txtTelephone.Clear();
             txtCity.Clear();
+            txtUsername.Clear();
         }
 
         public void Loadlist()
@@ -42,6 +44,7 @@ namespace SDAM2_Assignment
 
         private void btnRegisterStudent_Click(object sender, EventArgs e)
         {
+            string username = txtUsername.Text;
             student = new Student
             (
                 txtId.Text,
@@ -51,7 +54,7 @@ namespace SDAM2_Assignment
                 txtTelephone.Text,
                 txtCity.Text
             );
-            bool successful = dbHelper.AddStudent(student);
+            bool successful = dbHelper.AddStudent(student, username, "123");
             if (successful)
             {
                 MessageBox.Show("A new Student is registered successfully!", "Success", MessageBoxButtons.OK , MessageBoxIcon.Information);
@@ -66,6 +69,7 @@ namespace SDAM2_Assignment
 
         private void btnUpdateStudent_Click(object sender, EventArgs e)
         {
+            string username = txtUsername.Text;
             student = new Student
             (
                 txtId.Text,
@@ -75,7 +79,7 @@ namespace SDAM2_Assignment
                 txtTelephone.Text,
                 txtCity.Text
             );
-            bool successful = dbHelper.UpdateStudent(student);
+            bool successful = dbHelper.UpdateStudent(student, username);
             if (successful)
             {
                 MessageBox.Show("Successfully updated Student details!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

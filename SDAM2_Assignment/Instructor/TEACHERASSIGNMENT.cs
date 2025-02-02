@@ -7,26 +7,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SDAM2_Assignment.Classes;
 
-namespace SDAM2_Assignment
+namespace SDAM2_Assignment.Instructor
 {
     public partial class TEACHERASSIGNMENT : Form
     {
         private Assignment assignment;
         private List<Assignment> assignmentlist;
+        private List<Course> courselist;
         private DatabaseHelper dbHelper;
 
         public TEACHERASSIGNMENT()
         {
             InitializeComponent();
             dbHelper = new DatabaseHelper();
+            LoadCourses();
             Loadlist();
+        }
+
+        // Load courses into ComboBox
+        private void LoadCourses()
+        {
+            courselist = dbHelper.LoadCourses();
+            cmbCourses.DataSource = courselist;
+            cmbCourses.DisplayMember = "CourseName";
+            cmbCourses.ValueMember = "CourseID";
         }
 
         public void Loadlist()
         {
             assignmentlist = dbHelper.LoadAssignments();
             dgvAssignment.DataSource = assignmentlist;
+
+            dgvAssignment.Columns["CourseID"].Visible = false;
+            dgvAssignment.Columns["SubmissionDate"].Visible = false;
+            dgvAssignment.Columns["SubmissionFilePath"].Visible = false;
         }
 
         public void Clear()
@@ -35,17 +51,26 @@ namespace SDAM2_Assignment
             txtAssignmentName.Clear();
             dtpHandout.Value = DateTime.Today;
             dtpDeadline.Value = DateTime.Today;
+            cmbCourses.SelectedIndex = -1;
         }
 
         private void btnCreateAssignment_Click(object sender, EventArgs e)
         {
+            if (cmbCourses.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a Course.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             assignment = new Assignment(
                 txtAssignmentId.Text,
                 txtAssignmentName.Text,
                 dtpHandout.Value,
-                dtpDeadline.Value
+                dtpDeadline.Value,
+                cmbCourses.SelectedValue.ToString() 
             );
-            bool successful = dbHelper.CreateAssignment( assignment );
+
+            bool successful = dbHelper.CreateAssignment(assignment);
             if (successful)
             {
                 MessageBox.Show("A new Assignment is created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -60,12 +85,20 @@ namespace SDAM2_Assignment
 
         private void btnUpdateAssignment_Click(object sender, EventArgs e)
         {
+            if (cmbCourses.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a Course.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             assignment = new Assignment(
                 txtAssignmentId.Text,
                 txtAssignmentName.Text,
                 dtpHandout.Value,
-                dtpDeadline.Value
+                dtpDeadline.Value,
+                cmbCourses.SelectedValue.ToString()
             );
+
             bool successful = dbHelper.UpdateAssignment(assignment);
             if (successful)
             {
@@ -114,6 +147,8 @@ namespace SDAM2_Assignment
                 txtAssignmentName.Text = assignmentname;
                 dtpHandout.Text = handout;
                 dtpDeadline.Text = deadline;
+
+                cmbCourses.SelectedValue = row.Cells[4].Value;
             }
         }
 

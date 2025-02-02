@@ -30,10 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPageStudent));
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.btnAdminLoginPage = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -41,6 +37,10 @@
             this.usernameLabel = new System.Windows.Forms.Label();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.txtusername = new System.Windows.Forms.TextBox();
+            this.btnAdminLoginPage = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,48 +62,6 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(353, 451);
             this.panelLeft.TabIndex = 18;
-            // 
-            // btnAdminLoginPage
-            // 
-            this.btnAdminLoginPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
-            this.btnAdminLoginPage.ForeColor = System.Drawing.Color.Red;
-            this.btnAdminLoginPage.Location = new System.Drawing.Point(72, 393);
-            this.btnAdminLoginPage.Name = "btnAdminLoginPage";
-            this.btnAdminLoginPage.Size = new System.Drawing.Size(213, 27);
-            this.btnAdminLoginPage.TabIndex = 10;
-            this.btnAdminLoginPage.Text = "ADMIN USER";
-            this.btnAdminLoginPage.UseVisualStyleBackColor = false;
-            this.btnAdminLoginPage.Click += new System.EventHandler(this.btnAdminLoginPage_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label3.Location = new System.Drawing.Point(92, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(194, 31);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "ADMIN LOGIN";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(45, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(364, 31);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Course Management System\r\n";
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Location = new System.Drawing.Point(-84, 78);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(531, 451);
-            this.panel1.TabIndex = 20;
             // 
             // btnLogin
             // 
@@ -189,6 +147,48 @@
             this.txtusername.Size = new System.Drawing.Size(213, 20);
             this.txtusername.TabIndex = 11;
             // 
+            // btnAdminLoginPage
+            // 
+            this.btnAdminLoginPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
+            this.btnAdminLoginPage.ForeColor = System.Drawing.Color.White;
+            this.btnAdminLoginPage.Location = new System.Drawing.Point(72, 393);
+            this.btnAdminLoginPage.Name = "btnAdminLoginPage";
+            this.btnAdminLoginPage.Size = new System.Drawing.Size(213, 27);
+            this.btnAdminLoginPage.TabIndex = 10;
+            this.btnAdminLoginPage.Text = "ADMIN USER";
+            this.btnAdminLoginPage.UseVisualStyleBackColor = false;
+            this.btnAdminLoginPage.Click += new System.EventHandler(this.btnAdminLoginPage_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.Location = new System.Drawing.Point(66, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(236, 31);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "STUDENT LOGIN";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(45, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(364, 31);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Course Management System\r\n";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Location = new System.Drawing.Point(-84, 78);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(531, 451);
+            this.panel1.TabIndex = 20;
+            // 
             // LoginPageStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +197,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panelLeft);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "LoginPageStudent";
             this.Text = "LoginPageStudent";
             this.panelLeft.ResumeLayout(false);

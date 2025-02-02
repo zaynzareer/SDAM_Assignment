@@ -7,14 +7,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SDAM2_Assignment.Classes;
 
-namespace SDAM2_Assignment
+namespace SDAM2_Assignment.Instructor
 {
     public partial class PERFOMANCE : Form
     {
+        private DatabaseHelper dbHelper = new DatabaseHelper();
+        private List<Performance> performancelist;
         public PERFOMANCE()
         {
             InitializeComponent();
+            dbHelper = new DatabaseHelper();
+            LoadPerformance();
+        }
+
+        public void LoadPerformance()
+        {
+            performancelist = dbHelper.GetStudentPerformance();
+            dgvPerformance.DataSource = performancelist;
+            dgvPerformance.Columns["Progress"].DefaultCellStyle.Format = "0'%'";
+        }
+
+        private void btnGeneratePerformance_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvPerformance_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow row = dgvPerformance.Rows[e.RowIndex];
+
+                string studentId = row.Cells["StudentID"].Value.ToString();
+                string studentName = row.Cells["StudentName"].Value.ToString(); 
+
+                txtId.Text = studentId;
+                txtName.Text = studentName;
+            }
         }
 
         //navigation buttons
@@ -59,5 +90,6 @@ namespace SDAM2_Assignment
             performance.Show();
             this.Hide();
         }
+
     }
 }

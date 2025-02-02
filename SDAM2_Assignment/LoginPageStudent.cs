@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using Microsoft.Data.SqlClient;
+using SDAM2_Assignment.Students;
+using SDAM2_Assignment.Classes;
 
 namespace SDAM2_Assignment
 {
@@ -42,19 +44,37 @@ namespace SDAM2_Assignment
                 // Open the database connection
                 conn.Open();
 
-                // Prepare SQL command with parameterized query to prevent SQL injection
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Credentials WHERE Usernames = @username AND Passwords = @password", conn);
+                //query to fetch student details
+                string query = "SELECT s.Id, s.Name, s.Age, s.Gender, s.Telephone, s.City, c.Usernames FROM Students s " +
+                "JOIN Credentials c ON s.Id = c.StudentId " +
+                "WHERE c.Usernames = @username AND c.Passwords = @password";
+                SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);
 
-                // Execute the query and retrieve the result
-                int result = (int)cmd.ExecuteScalar();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-                // Check login success or failure
-                if (result > 0)
+                if (reader.Read()) // If a record is found
                 {
+                    // Create a student object from the retrieved data
+                    Student loggedInStudent = new Student
+                    (
+                        reader["Id"].ToString(),
+                        reader["Name"].ToString(),
+                        Convert.ToInt32(reader["Age"]),
+                        reader["Gender"].ToString(),
+                        reader["Telephone"].ToString(),
+                        reader["City"].ToString()
+                    );
+
+                    // Store the logged-in student in SessionManager
+                    SessionManager.SetLoggedInStudent(loggedInStudent);
+
+
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ui dashboard = new ui();
+
+                    // Open Student Dashboard
+                    STUDENTSUI dashboard = new STUDENTSUI();
                     dashboard.Show();
                     this.Hide();
                 }

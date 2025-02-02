@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SDAM2_Assignment.Classes;
 
-namespace SDAM2_Assignment
+namespace SDAM2_Assignment.Instructor
 {
     public partial class TeacherCourses : Form
     {
@@ -37,6 +38,11 @@ namespace SDAM2_Assignment
         }
         private void btnAddCourses_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtCourseId.Text) || string.IsNullOrWhiteSpace(txtCourseName.Text))
+            {
+                MessageBox.Show("Please fill in all fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             course = new Course
             (
                 txtCourseId.Text,
@@ -115,7 +121,7 @@ namespace SDAM2_Assignment
                 txtDuration.Text = duration;
                 txtDescription.Text = description;
             }
-        }
+        } 
 
         //navigation buttons
         private void btnDashboard_Click(object sender, EventArgs e)

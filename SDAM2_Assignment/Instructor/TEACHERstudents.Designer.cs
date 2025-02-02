@@ -1,4 +1,4 @@
-﻿namespace SDAM2_Assignment
+﻿namespace SDAM2_Assignment.Instructor
 {
     partial class TEACHERstudents
     {
@@ -60,6 +60,8 @@
             this.btnPerformanceReportPage = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
@@ -188,7 +190,7 @@
             // txtName
             // 
             this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(419, 393);
+            this.txtName.Location = new System.Drawing.Point(137, 61);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 40;
@@ -198,7 +200,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(369, 393);
+            this.label3.Location = new System.Drawing.Point(87, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 39;
@@ -207,7 +209,7 @@
             // txtAge
             // 
             this.txtAge.ForeColor = System.Drawing.Color.Black;
-            this.txtAge.Location = new System.Drawing.Point(419, 439);
+            this.txtAge.Location = new System.Drawing.Point(419, 425);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(100, 20);
             this.txtAge.TabIndex = 42;
@@ -217,7 +219,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(369, 439);
+            this.label4.Location = new System.Drawing.Point(369, 433);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 41;
@@ -237,7 +239,7 @@
             // txtTelephone
             // 
             this.txtTelephone.ForeColor = System.Drawing.Color.Black;
-            this.txtTelephone.Location = new System.Drawing.Point(710, 390);
+            this.txtTelephone.Location = new System.Drawing.Point(428, 61);
             this.txtTelephone.Name = "txtTelephone";
             this.txtTelephone.Size = new System.Drawing.Size(100, 20);
             this.txtTelephone.TabIndex = 46;
@@ -247,7 +249,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(649, 390);
+            this.label6.Location = new System.Drawing.Point(364, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 45;
@@ -256,7 +258,7 @@
             // txtCity
             // 
             this.txtCity.ForeColor = System.Drawing.Color.Black;
-            this.txtCity.Location = new System.Drawing.Point(710, 439);
+            this.txtCity.Location = new System.Drawing.Point(710, 425);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(100, 20);
             this.txtCity.TabIndex = 48;
@@ -266,7 +268,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(367, 118);
+            this.label7.Location = new System.Drawing.Point(378, 104);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(24, 13);
             this.label7.TabIndex = 47;
@@ -297,10 +299,16 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.panel2.Controls.Add(this.txtUsername);
+            this.panel2.Controls.Add(this.lblUsername);
             this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.txtName);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.txtTelephone);
             this.panel2.Location = new System.Drawing.Point(282, 321);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(682, 159);
+            this.panel2.Size = new System.Drawing.Size(682, 181);
             this.panel2.TabIndex = 51;
             // 
             // btnEnrollmentPage
@@ -396,6 +404,25 @@
             this.dataGridView1.Size = new System.Drawing.Size(241, 526);
             this.dataGridView1.TabIndex = 53;
             // 
+            // txtUsername
+            // 
+            this.txtUsername.ForeColor = System.Drawing.Color.Black;
+            this.txtUsername.Location = new System.Drawing.Point(137, 144);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.TabIndex = 49;
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(81, 150);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(55, 13);
+            this.lblUsername.TabIndex = 48;
+            this.lblUsername.Text = "Username";
+            // 
             // TEACHERstudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,13 +438,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmbGender);
             this.Controls.Add(this.txtCity);
-            this.Controls.Add(this.txtTelephone);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -476,5 +499,7 @@
         private System.Windows.Forms.Button btnPerformanceReportPage;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblUsername;
     }
 }

@@ -5,7 +5,7 @@ using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SDAM2_Assignment
+namespace SDAM2_Assignment.Classes
 {
     internal class Instructor : User
     {

@@ -1,4 +1,4 @@
-﻿namespace SDAM2_Assignment
+﻿namespace SDAM2_Assignment.Instructor
 {
     partial class TEACHERASSIGNMENT
     {
@@ -59,6 +59,8 @@
             this.btnPerformanceReportPage = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmbCourses = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssignment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -75,7 +77,7 @@
             this.dgvAssignment.Location = new System.Drawing.Point(272, 96);
             this.dgvAssignment.Name = "dgvAssignment";
             this.dgvAssignment.ReadOnly = true;
-            this.dgvAssignment.Size = new System.Drawing.Size(703, 193);
+            this.dgvAssignment.Size = new System.Drawing.Size(703, 172);
             this.dgvAssignment.TabIndex = 42;
             this.dgvAssignment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssignment_CellClick);
             // 
@@ -174,7 +176,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(336, 106);
+            this.label14.Location = new System.Drawing.Point(336, 133);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(106, 13);
             this.label14.TabIndex = 86;
@@ -185,7 +187,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(336, 50);
+            this.label12.Location = new System.Drawing.Point(336, 77);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(105, 13);
             this.label12.TabIndex = 84;
@@ -196,7 +198,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(75, 106);
+            this.label11.Location = new System.Drawing.Point(75, 133);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(92, 13);
             this.label11.TabIndex = 82;
@@ -205,7 +207,7 @@
             // txtAssignmentId
             // 
             this.txtAssignmentId.ForeColor = System.Drawing.Color.Black;
-            this.txtAssignmentId.Location = new System.Drawing.Point(171, 47);
+            this.txtAssignmentId.Location = new System.Drawing.Point(171, 74);
             this.txtAssignmentId.Name = "txtAssignmentId";
             this.txtAssignmentId.Size = new System.Drawing.Size(100, 20);
             this.txtAssignmentId.TabIndex = 81;
@@ -215,7 +217,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(75, 52);
+            this.label10.Location = new System.Drawing.Point(75, 79);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 13);
             this.label10.TabIndex = 80;
@@ -262,21 +264,21 @@
             // txtAssignmentName
             // 
             this.txtAssignmentName.ForeColor = System.Drawing.Color.Black;
-            this.txtAssignmentName.Location = new System.Drawing.Point(171, 99);
+            this.txtAssignmentName.Location = new System.Drawing.Point(171, 126);
             this.txtAssignmentName.Name = "txtAssignmentName";
             this.txtAssignmentName.Size = new System.Drawing.Size(100, 20);
             this.txtAssignmentName.TabIndex = 83;
             // 
             // dtpHandout
             // 
-            this.dtpHandout.Location = new System.Drawing.Point(453, 46);
+            this.dtpHandout.Location = new System.Drawing.Point(453, 73);
             this.dtpHandout.Name = "dtpHandout";
             this.dtpHandout.Size = new System.Drawing.Size(206, 20);
             this.dtpHandout.TabIndex = 90;
             // 
             // dtpDeadline
             // 
-            this.dtpDeadline.Location = new System.Drawing.Point(453, 100);
+            this.dtpDeadline.Location = new System.Drawing.Point(453, 127);
             this.dtpDeadline.Name = "dtpDeadline";
             this.dtpDeadline.Size = new System.Drawing.Size(206, 20);
             this.dtpDeadline.TabIndex = 91;
@@ -284,6 +286,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.cmbCourses);
             this.panel4.Controls.Add(this.dtpDeadline);
             this.panel4.Controls.Add(this.dtpHandout);
             this.panel4.Controls.Add(this.txtAssignmentName);
@@ -293,9 +297,9 @@
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.label14);
-            this.panel4.Location = new System.Drawing.Point(272, 310);
+            this.panel4.Location = new System.Drawing.Point(272, 289);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(703, 159);
+            this.panel4.Size = new System.Drawing.Size(703, 180);
             this.panel4.TabIndex = 89;
             // 
             // btnEnrollmentPage
@@ -391,6 +395,24 @@
             this.dataGridView1.Size = new System.Drawing.Size(241, 526);
             this.dataGridView1.TabIndex = 92;
             // 
+            // cmbCourses
+            // 
+            this.cmbCourses.FormattingEnabled = true;
+            this.cmbCourses.Location = new System.Drawing.Point(317, 22);
+            this.cmbCourses.Name = "cmbCourses";
+            this.cmbCourses.Size = new System.Drawing.Size(102, 21);
+            this.cmbCourses.TabIndex = 92;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(257, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 93;
+            this.label1.Text = "COURSE";
+            // 
             // TEACHERASSIGNMENT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,5 +480,7 @@
         private System.Windows.Forms.Button btnPerformanceReportPage;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbCourses;
     }
 }

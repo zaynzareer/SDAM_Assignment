@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPageInstructor));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.btnLoginPageStudent = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.txtusername = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLoginPageStudent = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,18 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(353, 451);
             this.panelLeft.TabIndex = 6;
+            // 
+            // btnLoginPageStudent
+            // 
+            this.btnLoginPageStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
+            this.btnLoginPageStudent.ForeColor = System.Drawing.Color.White;
+            this.btnLoginPageStudent.Location = new System.Drawing.Point(72, 393);
+            this.btnLoginPageStudent.Name = "btnLoginPageStudent";
+            this.btnLoginPageStudent.Size = new System.Drawing.Size(213, 27);
+            this.btnLoginPageStudent.TabIndex = 9;
+            this.btnLoginPageStudent.Text = "STUDENT USER";
+            this.btnLoginPageStudent.UseVisualStyleBackColor = false;
+            this.btnLoginPageStudent.Click += new System.EventHandler(this.btnLoginPageStudent_Click);
             // 
             // btnLogin
             // 
@@ -134,11 +146,11 @@
             this.loginLabel.AutoSize = true;
             this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.loginLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.loginLabel.Location = new System.Drawing.Point(129, 84);
+            this.loginLabel.Location = new System.Drawing.Point(38, 82);
             this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(99, 31);
+            this.loginLabel.Size = new System.Drawing.Size(287, 31);
             this.loginLabel.TabIndex = 2;
-            this.loginLabel.Text = "LOGIN";
+            this.loginLabel.Text = "INSTRUCTOR LOGIN";
             // 
             // txtpassword
             // 
@@ -180,18 +192,6 @@
             this.label1.Size = new System.Drawing.Size(364, 31);
             this.label1.TabIndex = 7;
             this.label1.Text = "Course Management System\r\n";
-            // 
-            // btnLoginPageStudent
-            // 
-            this.btnLoginPageStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(58)))), ((int)(((byte)(141)))));
-            this.btnLoginPageStudent.ForeColor = System.Drawing.Color.Red;
-            this.btnLoginPageStudent.Location = new System.Drawing.Point(72, 393);
-            this.btnLoginPageStudent.Name = "btnLoginPageStudent";
-            this.btnLoginPageStudent.Size = new System.Drawing.Size(213, 27);
-            this.btnLoginPageStudent.TabIndex = 9;
-            this.btnLoginPageStudent.Text = "STUDENT USER";
-            this.btnLoginPageStudent.UseVisualStyleBackColor = false;
-            this.btnLoginPageStudent.Click += new System.EventHandler(this.btnLoginPageStudent_Click);
             // 
             // LoginPageInstructor
             // 

@@ -9,8 +9,9 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SDAM2_Assignment.Classes;
 
-namespace SDAM2_Assignment
+namespace SDAM2_Assignment.Instructor
 {
     public partial class TEACHERENROLLMENTS : Form
     {
@@ -36,6 +37,10 @@ namespace SDAM2_Assignment
             enrollmentlist = dbHelper.LoadEnrollments();
             dgvEnrollment.DataSource = enrollmentlist;
             dgvEnrollment.ClearSelection();
+
+            dgvEnrollment.Columns["Progress"].Visible = false;
+            dgvEnrollment.Columns["CompletionStatus"].Visible = false;
+            dgvEnrollment.Columns["CourseID"].Visible = false;
         }
 
         private void btnApprove_Click(object sender, EventArgs e)
