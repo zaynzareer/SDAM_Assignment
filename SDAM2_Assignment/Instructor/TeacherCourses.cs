@@ -165,5 +165,10 @@ namespace SDAM2_Assignment.Instructor
             performance.Show();
             this.Hide();
         }
+
+        private void TeacherCourses_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

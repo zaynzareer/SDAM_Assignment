@@ -243,6 +243,7 @@
             this.Controls.Add(this.panel17);
             this.Name = "STUDENTEnrollment";
             this.Text = "STUDENTEnrollment";
+            this.Load += new System.EventHandler(this.STUDENTEnrollment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentEnrollment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();

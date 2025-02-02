@@ -194,5 +194,15 @@ namespace SDAM2_Assignment.Instructor
             performance.Show();
             this.Hide();
         }
+
+        private void dgvAssignment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TEACHERASSIGNMENT_Load(object sender, EventArgs e)
+        {
+
+        }
     }    
 }

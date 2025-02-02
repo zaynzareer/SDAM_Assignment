@@ -44,29 +44,28 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnLoadProfile = new System.Windows.Forms.Button();
             this.btnUpdateProfile = new System.Windows.Forms.Button();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.MyName = new System.Windows.Forms.Label();
-            this.City = new System.Windows.Forms.Label();
-            this.Telephone = new System.Windows.Forms.Label();
-            this.Age = new System.Windows.Forms.Label();
-            this.Gender = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnUpdateStudent1 = new System.Windows.Forms.Button();
-            this.btnRemoveStudent1 = new System.Windows.Forms.Button();
-            this.btnRegisterStudent1 = new System.Windows.Forms.Button();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTelephone = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssignment14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel17.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEnrollmentPage1
@@ -187,8 +186,9 @@
             this.dgvAssignment14.Location = new System.Drawing.Point(267, 88);
             this.dgvAssignment14.Name = "dgvAssignment14";
             this.dgvAssignment14.ReadOnly = true;
-            this.dgvAssignment14.Size = new System.Drawing.Size(703, 193);
+            this.dgvAssignment14.Size = new System.Drawing.Size(703, 170);
             this.dgvAssignment14.TabIndex = 157;
+            this.dgvAssignment14.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssignment14_CellContentClick);
             // 
             // button1
             // 
@@ -204,7 +204,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(287, 1);
+            this.dataGridView1.Location = new System.Drawing.Point(287, 35);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(915, 69);
             this.dataGridView1.TabIndex = 155;
@@ -214,23 +214,24 @@
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.panel17.Controls.Add(this.btnLoadProfile);
             this.panel17.Controls.Add(this.btnUpdateProfile);
-            this.panel17.Location = new System.Drawing.Point(268, 434);
+            this.panel17.Location = new System.Drawing.Point(274, 498);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(703, 79);
             this.panel17.TabIndex = 158;
             // 
             // btnLoadProfile
             // 
-            this.btnLoadProfile.Location = new System.Drawing.Point(132, 20);
+            this.btnLoadProfile.Location = new System.Drawing.Point(114, 26);
             this.btnLoadProfile.Name = "btnLoadProfile";
             this.btnLoadProfile.Size = new System.Drawing.Size(155, 36);
             this.btnLoadProfile.TabIndex = 40;
             this.btnLoadProfile.Text = "Update Profile";
             this.btnLoadProfile.UseVisualStyleBackColor = true;
+            this.btnLoadProfile.Click += new System.EventHandler(this.btnLoadProfile_Click);
             // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(460, 20);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(442, 26);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
             this.btnUpdateProfile.Size = new System.Drawing.Size(164, 36);
             this.btnUpdateProfile.TabIndex = 41;
@@ -238,159 +239,175 @@
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
             this.btnUpdateProfile.Click += new System.EventHandler(this.btnUpdateProfile_Click);
             // 
-            // panel15
+            // cmbGender
             // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
-            this.panel15.Controls.Add(this.MyName);
-            this.panel15.Controls.Add(this.City);
-            this.panel15.Controls.Add(this.Telephone);
-            this.panel15.Controls.Add(this.Age);
-            this.panel15.Controls.Add(this.Gender);
-            this.panel15.Controls.Add(this.textBox4);
-            this.panel15.Controls.Add(this.textBox5);
-            this.panel15.Controls.Add(this.textBox3);
-            this.panel15.Controls.Add(this.textBox2);
-            this.panel15.Controls.Add(this.textBox1);
-            this.panel15.Controls.Add(this.panel5);
-            this.panel15.Location = new System.Drawing.Point(268, 301);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(703, 122);
-            this.panel15.TabIndex = 159;
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cmbGender.Location = new System.Drawing.Point(540, 368);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(100, 21);
+            this.cmbGender.TabIndex = 165;
             // 
-            // MyName
+            // txtCity
             // 
-            this.MyName.AutoSize = true;
-            this.MyName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.MyName.Location = new System.Drawing.Point(36, 32);
-            this.MyName.Name = "MyName";
-            this.MyName.Size = new System.Drawing.Size(35, 13);
-            this.MyName.TabIndex = 161;
-            this.MyName.Text = "Name\n";
+            this.txtCity.ForeColor = System.Drawing.Color.Black;
+            this.txtCity.Location = new System.Drawing.Point(498, 134);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(100, 20);
+            this.txtCity.TabIndex = 164;
             // 
-            // City
+            // label5
             // 
-            this.City.AutoSize = true;
-            this.City.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.City.Location = new System.Drawing.Point(496, 59);
-            this.City.Name = "City";
-            this.City.Size = new System.Drawing.Size(24, 13);
-            this.City.TabIndex = 160;
-            this.City.Text = "City";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(479, 368);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.TabIndex = 163;
+            this.label5.Text = "Gender";
             // 
-            // Telephone
+            // txtAge
             // 
-            this.Telephone.AutoSize = true;
-            this.Telephone.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Telephone.Location = new System.Drawing.Point(254, 93);
-            this.Telephone.Name = "Telephone";
-            this.Telephone.Size = new System.Drawing.Size(58, 13);
-            this.Telephone.TabIndex = 159;
-            this.Telephone.Text = "Telephone";
+            this.txtAge.ForeColor = System.Drawing.Color.Black;
+            this.txtAge.Location = new System.Drawing.Point(341, 399);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(100, 20);
+            this.txtAge.TabIndex = 162;
             // 
-            // Age
+            // label4
             // 
-            this.Age.AutoSize = true;
-            this.Age.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Age.Location = new System.Drawing.Point(264, 39);
-            this.Age.Name = "Age";
-            this.Age.Size = new System.Drawing.Size(26, 13);
-            this.Age.TabIndex = 158;
-            this.Age.Text = "Age";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(291, 404);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 161;
+            this.label4.Text = "Age";
             // 
-            // Gender
+            // txtId
             // 
-            this.Gender.AutoSize = true;
-            this.Gender.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Gender.Location = new System.Drawing.Point(36, 93);
-            this.Gender.Name = "Gender";
-            this.Gender.Size = new System.Drawing.Size(42, 13);
-            this.Gender.TabIndex = 157;
-            this.Gender.Text = "Gender";
+            this.txtId.ForeColor = System.Drawing.Color.Black;
+            this.txtId.Location = new System.Drawing.Point(73, 53);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 160;
             // 
-            // textBox4
+            // label2
             // 
-            this.textBox4.Location = new System.Drawing.Point(580, 56);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 155;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(26, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 13);
+            this.label2.TabIndex = 159;
+            this.label2.Text = "ID";
             // 
-            // textBox5
+            // panel2
             // 
-            this.textBox5.Location = new System.Drawing.Point(112, 32);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 156;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.panel2.Controls.Add(this.txtUsername);
+            this.panel2.Controls.Add(this.txtCity);
+            this.panel2.Controls.Add(this.lblUsername);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.txtId);
+            this.panel2.Controls.Add(this.txtName);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.txtTelephone);
+            this.panel2.Location = new System.Drawing.Point(268, 285);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(686, 205);
+            this.panel2.TabIndex = 166;
             // 
-            // textBox3
+            // txtUsername
             // 
-            this.textBox3.Location = new System.Drawing.Point(334, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 92;
+            this.txtUsername.ForeColor = System.Drawing.Color.Black;
+            this.txtUsername.Location = new System.Drawing.Point(73, 172);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.TabIndex = 49;
             // 
-            // textBox2
+            // lblUsername
             // 
-            this.textBox2.Location = new System.Drawing.Point(112, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 91;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(17, 178);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(55, 13);
+            this.lblUsername.TabIndex = 48;
+            this.lblUsername.Text = "Username";
             // 
-            // textBox1
+            // label7
             // 
-            this.textBox1.Location = new System.Drawing.Point(334, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 90;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(448, 134);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(24, 13);
+            this.label7.TabIndex = 47;
+            this.label7.Text = "City";
             // 
-            // panel5
+            // txtName
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
-            this.panel5.Controls.Add(this.btnUpdateStudent1);
-            this.panel5.Controls.Add(this.btnRemoveStudent1);
-            this.panel5.Controls.Add(this.btnRegisterStudent1);
-            this.panel5.Location = new System.Drawing.Point(-2, 185);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(682, 80);
-            this.panel5.TabIndex = 89;
+            this.txtName.ForeColor = System.Drawing.Color.Black;
+            this.txtName.Location = new System.Drawing.Point(266, 151);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 40;
             // 
-            // btnUpdateStudent1
+            // label3
             // 
-            this.btnUpdateStudent1.Location = new System.Drawing.Point(284, 25);
-            this.btnUpdateStudent1.Name = "btnUpdateStudent1";
-            this.btnUpdateStudent1.Size = new System.Drawing.Size(137, 36);
-            this.btnUpdateStudent1.TabIndex = 34;
-            this.btnUpdateStudent1.Text = "UPDATE COURSES";
-            this.btnUpdateStudent1.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(216, 151);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Name";
             // 
-            // btnRemoveStudent1
+            // label6
             // 
-            this.btnRemoveStudent1.Location = new System.Drawing.Point(489, 25);
-            this.btnRemoveStudent1.Name = "btnRemoveStudent1";
-            this.btnRemoveStudent1.Size = new System.Drawing.Size(137, 36);
-            this.btnRemoveStudent1.TabIndex = 23;
-            this.btnRemoveStudent1.Text = "REMOVE COURSES";
-            this.btnRemoveStudent1.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(445, 61);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 13);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "Telephone";
             // 
-            // btnRegisterStudent1
+            // txtTelephone
             // 
-            this.btnRegisterStudent1.Location = new System.Drawing.Point(77, 25);
-            this.btnRegisterStudent1.Name = "btnRegisterStudent1";
-            this.btnRegisterStudent1.Size = new System.Drawing.Size(137, 36);
-            this.btnRegisterStudent1.TabIndex = 79;
-            this.btnRegisterStudent1.Text = "ADD COURSES";
-            this.btnRegisterStudent1.UseVisualStyleBackColor = true;
+            this.txtTelephone.ForeColor = System.Drawing.Color.Black;
+            this.txtTelephone.Location = new System.Drawing.Point(509, 61);
+            this.txtTelephone.Name = "txtTelephone";
+            this.txtTelephone.Size = new System.Drawing.Size(100, 20);
+            this.txtTelephone.TabIndex = 46;
             // 
             // STUDENTSStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(989, 521);
+            this.ClientSize = new System.Drawing.Size(989, 589);
+            this.Controls.Add(this.cmbGender);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtAge);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvAssignment14);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel17);
-            this.Controls.Add(this.panel15);
             this.Controls.Add(this.btnEnrollmentPage1);
             this.Controls.Add(this.btnStudentsPage1);
             this.Controls.Add(this.btnAssignmentPage1);
@@ -402,16 +419,17 @@
             this.Controls.Add(this.dataGridView3);
             this.Name = "STUDENTSStudent";
             this.Text = "STUDENTSStudent";
+            this.Load += new System.EventHandler(this.STUDENTSStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssignment14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel17.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
-            this.panel5.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -432,20 +450,20 @@
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Button btnLoadProfile;
         private System.Windows.Forms.Button btnUpdateProfile;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Label MyName;
-        private System.Windows.Forms.Label City;
-        private System.Windows.Forms.Label Telephone;
-        private System.Windows.Forms.Label Age;
-        private System.Windows.Forms.Label Gender;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnUpdateStudent1;
-        private System.Windows.Forms.Button btnRemoveStudent1;
-        private System.Windows.Forms.Button btnRegisterStudent1;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtAge;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTelephone;
     }
 }

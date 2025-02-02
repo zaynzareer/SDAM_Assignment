@@ -243,6 +243,7 @@
             this.Controls.Add(this.panel17);
             this.Name = "STUDENTCourses";
             this.Text = "STUDENTCourses";
+            this.Load += new System.EventHandler(this.STUDENTCourses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableCourses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();

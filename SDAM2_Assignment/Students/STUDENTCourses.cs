@@ -116,6 +116,9 @@ namespace SDAM2_Assignment.Students
             this.Hide();
         }
 
-        
+        private void STUDENTCourses_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

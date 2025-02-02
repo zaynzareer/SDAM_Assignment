@@ -137,5 +137,10 @@ namespace SDAM2_Assignment.Students
         {
 
         }
+
+        private void STUDENTPerformance_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

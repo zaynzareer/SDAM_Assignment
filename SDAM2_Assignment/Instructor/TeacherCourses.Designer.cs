@@ -414,6 +414,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Name = "TeacherCourses";
             this.Text = "TeacherCourses";
+            this.Load += new System.EventHandler(this.TeacherCourses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

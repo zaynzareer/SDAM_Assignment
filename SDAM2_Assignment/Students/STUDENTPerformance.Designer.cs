@@ -248,6 +248,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Name = "STUDENTPerformance";
             this.Text = "STUDENTPerformance";
+            this.Load += new System.EventHandler(this.STUDENTPerformance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentPerformance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

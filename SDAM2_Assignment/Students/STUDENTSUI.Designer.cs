@@ -40,13 +40,22 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRefreshCourses = new System.Windows.Forms.Button();
-            this.dgvMyCourses = new System.Windows.Forms.DataGridView();
+            this.dgvDisplayAssignment = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgvAvailableCourses = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dgvStudentEnrollment = new System.Windows.Forms.DataGridView();
+            this.dgvStudentPerformance = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMyCourses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayAssignment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableCourses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentEnrollment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentPerformance)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEnrollmentPage1
@@ -180,22 +189,81 @@
             this.pictureBox1.TabIndex = 136;
             this.pictureBox1.TabStop = false;
             // 
-            // btnRefreshCourses
+            // dgvDisplayAssignment
             // 
-            this.btnRefreshCourses.Location = new System.Drawing.Point(552, 307);
-            this.btnRefreshCourses.Name = "btnRefreshCourses";
-            this.btnRefreshCourses.Size = new System.Drawing.Size(130, 27);
-            this.btnRefreshCourses.TabIndex = 158;
-            this.btnRefreshCourses.Text = "View Courses";
-            this.btnRefreshCourses.UseVisualStyleBackColor = true;
+            this.dgvDisplayAssignment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDisplayAssignment.Location = new System.Drawing.Point(268, 103);
+            this.dgvDisplayAssignment.Name = "dgvDisplayAssignment";
+            this.dgvDisplayAssignment.ReadOnly = true;
+            this.dgvDisplayAssignment.Size = new System.Drawing.Size(235, 104);
+            this.dgvDisplayAssignment.TabIndex = 160;
+            this.dgvDisplayAssignment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayAssignment_CellContentClick);
             // 
-            // dgvMyCourses
+            // label1
             // 
-            this.dgvMyCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMyCourses.Location = new System.Drawing.Point(288, 101);
-            this.dgvMyCourses.Name = "dgvMyCourses";
-            this.dgvMyCourses.Size = new System.Drawing.Size(663, 150);
-            this.dgvMyCourses.TabIndex = 157;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(354, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 161;
+            this.label1.Text = "Assignment";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(774, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 162;
+            this.label2.Text = "courses";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(354, 312);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 163;
+            this.label3.Text = "Enrollment";
+            // 
+            // dgvAvailableCourses
+            // 
+            this.dgvAvailableCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAvailableCourses.Location = new System.Drawing.Point(673, 103);
+            this.dgvAvailableCourses.Name = "dgvAvailableCourses";
+            this.dgvAvailableCourses.ReadOnly = true;
+            this.dgvAvailableCourses.Size = new System.Drawing.Size(235, 104);
+            this.dgvAvailableCourses.TabIndex = 164;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(774, 312);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 165;
+            this.label4.Text = "Perfomance";
+            // 
+            // dgvStudentEnrollment
+            // 
+            this.dgvStudentEnrollment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudentEnrollment.Location = new System.Drawing.Point(268, 355);
+            this.dgvStudentEnrollment.Name = "dgvStudentEnrollment";
+            this.dgvStudentEnrollment.ReadOnly = true;
+            this.dgvStudentEnrollment.Size = new System.Drawing.Size(235, 104);
+            this.dgvStudentEnrollment.TabIndex = 166;
+            // 
+            // dgvStudentPerformance
+            // 
+            this.dgvStudentPerformance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudentPerformance.Location = new System.Drawing.Point(673, 355);
+            this.dgvStudentPerformance.Name = "dgvStudentPerformance";
+            this.dgvStudentPerformance.Size = new System.Drawing.Size(235, 104);
+            this.dgvStudentPerformance.TabIndex = 171;
             // 
             // STUDENTSUI
             // 
@@ -203,8 +271,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(994, 531);
-            this.Controls.Add(this.btnRefreshCourses);
-            this.Controls.Add(this.dgvMyCourses);
+            this.Controls.Add(this.dgvStudentPerformance);
+            this.Controls.Add(this.dgvStudentEnrollment);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dgvAvailableCourses);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgvDisplayAssignment);
             this.Controls.Add(this.btnEnrollmentPage1);
             this.Controls.Add(this.btnStudentsPage1);
             this.Controls.Add(this.btnAssignmentPage1);
@@ -218,12 +292,17 @@
             this.Controls.Add(this.dataGridView2);
             this.Name = "STUDENTSUI";
             this.Text = "STUDENTSUI";
+            this.Load += new System.EventHandler(this.STUDENTSUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMyCourses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayAssignment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableCourses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentEnrollment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentPerformance)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -240,7 +319,13 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button btnRefreshCourses;
-        private System.Windows.Forms.DataGridView dgvMyCourses;
+        private System.Windows.Forms.DataGridView dgvDisplayAssignment;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgvAvailableCourses;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvStudentEnrollment;
+        private System.Windows.Forms.DataGridView dgvStudentPerformance;
     }
 }

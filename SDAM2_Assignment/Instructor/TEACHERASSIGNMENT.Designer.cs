@@ -52,6 +52,8 @@
             this.dtpHandout = new System.Windows.Forms.DateTimePicker();
             this.dtpDeadline = new System.Windows.Forms.DateTimePicker();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbCourses = new System.Windows.Forms.ComboBox();
             this.btnEnrollmentPage = new System.Windows.Forms.Button();
             this.btnStudentsPage = new System.Windows.Forms.Button();
             this.btnAssignmentPage = new System.Windows.Forms.Button();
@@ -59,8 +61,6 @@
             this.btnPerformanceReportPage = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cmbCourses = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssignment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -80,6 +80,7 @@
             this.dgvAssignment.Size = new System.Drawing.Size(703, 172);
             this.dgvAssignment.TabIndex = 42;
             this.dgvAssignment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssignment_CellClick);
+            this.dgvAssignment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssignment_CellContentClick);
             // 
             // btnUpdateAssignment
             // 
@@ -302,6 +303,24 @@
             this.panel4.Size = new System.Drawing.Size(703, 180);
             this.panel4.TabIndex = 89;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(257, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 93;
+            this.label1.Text = "COURSE";
+            // 
+            // cmbCourses
+            // 
+            this.cmbCourses.FormattingEnabled = true;
+            this.cmbCourses.Location = new System.Drawing.Point(317, 22);
+            this.cmbCourses.Name = "cmbCourses";
+            this.cmbCourses.Size = new System.Drawing.Size(102, 21);
+            this.cmbCourses.TabIndex = 92;
+            // 
             // btnEnrollmentPage
             // 
             this.btnEnrollmentPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
@@ -395,24 +414,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(241, 526);
             this.dataGridView1.TabIndex = 92;
             // 
-            // cmbCourses
-            // 
-            this.cmbCourses.FormattingEnabled = true;
-            this.cmbCourses.Location = new System.Drawing.Point(317, 22);
-            this.cmbCourses.Name = "cmbCourses";
-            this.cmbCourses.Size = new System.Drawing.Size(102, 21);
-            this.cmbCourses.TabIndex = 92;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(257, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 93;
-            this.label1.Text = "COURSE";
-            // 
             // TEACHERASSIGNMENT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,6 +436,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "TEACHERASSIGNMENT";
             this.Text = "TEACHERASSIGNMENT";
+            this.Load += new System.EventHandler(this.TEACHERASSIGNMENT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssignment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

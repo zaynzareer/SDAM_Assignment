@@ -118,5 +118,15 @@ namespace SDAM2_Assignment.Students
             SPui.Show();
             this.Hide();
         }
+
+        private void STUDENTAssignment_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDisplayAssignment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

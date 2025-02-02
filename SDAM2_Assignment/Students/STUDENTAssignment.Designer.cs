@@ -162,6 +162,7 @@
             this.dgvDisplayAssignment.ReadOnly = true;
             this.dgvDisplayAssignment.Size = new System.Drawing.Size(703, 193);
             this.dgvDisplayAssignment.TabIndex = 159;
+            this.dgvDisplayAssignment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayAssignment_CellContentClick);
             // 
             // button7
             // 
@@ -323,6 +324,7 @@
             this.Controls.Add(this.panel15);
             this.Name = "STUDENTAssignment";
             this.Text = "STUDENTAssignment";
+            this.Load += new System.EventHandler(this.STUDENTAssignment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayAssignment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();

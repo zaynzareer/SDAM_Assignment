@@ -102,5 +102,10 @@ namespace SDAM2_Assignment.Students
             SPui.Show();
             this.Hide(); 
         }
+
+        private void STUDENTEnrollment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

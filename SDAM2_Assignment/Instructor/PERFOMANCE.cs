@@ -91,5 +91,9 @@ namespace SDAM2_Assignment.Instructor
             this.Hide();
         }
 
+        private void PERFOMANCE_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

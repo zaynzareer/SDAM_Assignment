@@ -1,4 +1,7 @@
-﻿namespace SDAM2_Assignment.Instructor
+﻿using System;
+using System.Windows.Forms;
+
+namespace SDAM2_Assignment.Instructor
 {
     partial class ui
     {
@@ -40,10 +43,22 @@
             this.btnCoursePage = new System.Windows.Forms.Button();
             this.btnPerformanceReportPage = new System.Windows.Forms.Button();
             this.btnEnrollmentPage = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvAssignment = new System.Windows.Forms.DataGridView();
+            this.dgvCourses = new System.Windows.Forms.DataGridView();
+            this.dgvEnrollment = new System.Windows.Forms.DataGridView();
+            this.dgvPerformance = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssignment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerformance)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -175,12 +190,99 @@
             this.btnEnrollmentPage.UseVisualStyleBackColor = false;
             this.btnEnrollmentPage.Click += new System.EventHandler(this.btnEnrollmentPage_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(792, 345);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 177;
+            this.label4.Text = "Perfomance";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(372, 345);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 175;
+            this.label3.Text = "Enrollment";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(792, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 174;
+            this.label2.Text = "courses";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(372, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 173;
+            this.label1.Text = "Assignment";
+            // 
+            // dgvAssignment
+            // 
+            this.dgvAssignment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAssignment.Location = new System.Drawing.Point(286, 136);
+            this.dgvAssignment.Name = "dgvAssignment";
+            this.dgvAssignment.ReadOnly = true;
+            this.dgvAssignment.Size = new System.Drawing.Size(235, 104);
+            this.dgvAssignment.TabIndex = 180;
+            this.dgvAssignment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssignment_CellContentClick);
+            // 
+            // dgvCourses
+            // 
+            this.dgvCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCourses.Location = new System.Drawing.Point(691, 136);
+            this.dgvCourses.Name = "dgvCourses";
+            this.dgvCourses.ReadOnly = true;
+            this.dgvCourses.Size = new System.Drawing.Size(235, 104);
+            this.dgvCourses.TabIndex = 181;
+            this.dgvCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourses_CellContentClick);
+            // 
+            // dgvEnrollment
+            // 
+            this.dgvEnrollment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEnrollment.Location = new System.Drawing.Point(286, 378);
+            this.dgvEnrollment.Name = "dgvEnrollment";
+            this.dgvEnrollment.ReadOnly = true;
+            this.dgvEnrollment.Size = new System.Drawing.Size(235, 104);
+            this.dgvEnrollment.TabIndex = 182;
+            this.dgvEnrollment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnrollment_CellContentClick);
+            // 
+            // dgvPerformance
+            // 
+            this.dgvPerformance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPerformance.Location = new System.Drawing.Point(691, 378);
+            this.dgvPerformance.Name = "dgvPerformance";
+            this.dgvPerformance.Size = new System.Drawing.Size(235, 104);
+            this.dgvPerformance.TabIndex = 183;
+            this.dgvPerformance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerformance_CellContentClick);
+            // 
             // ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(990, 613);
+            this.Controls.Add(this.dgvPerformance);
+            this.Controls.Add(this.dgvEnrollment);
+            this.Controls.Add(this.dgvCourses);
+            this.Controls.Add(this.dgvAssignment);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEnrollmentPage);
             this.Controls.Add(this.btnStudentsPage);
             this.Controls.Add(this.btnAssignmentPage);
@@ -199,8 +301,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssignment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerformance)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
+        }
+
+        private void dgvPerformance_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void dgvEnrollment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void dgvCourses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void dgvAssignment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -216,5 +343,13 @@
         private System.Windows.Forms.Button btnCoursePage;
         private System.Windows.Forms.Button btnPerformanceReportPage;
         private System.Windows.Forms.Button btnEnrollmentPage;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvAssignment;
+        private System.Windows.Forms.DataGridView dgvCourses;
+        private System.Windows.Forms.DataGridView dgvEnrollment;
+        private System.Windows.Forms.DataGridView dgvPerformance;
     }
 }

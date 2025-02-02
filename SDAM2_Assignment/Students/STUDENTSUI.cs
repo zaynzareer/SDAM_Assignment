@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace SDAM2_Assignment.Students
 {
     public partial class STUDENTSUI : Form
+
     {
         public STUDENTSUI()
         {
@@ -58,6 +59,16 @@ namespace SDAM2_Assignment.Students
             STUDENTPerformance SPui = new STUDENTPerformance();
             SPui.Show();
             this.Hide();
+        }
+
+        private void STUDENTSUI_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDisplayAssignment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
