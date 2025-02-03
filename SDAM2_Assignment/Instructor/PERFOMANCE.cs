@@ -95,5 +95,17 @@ namespace SDAM2_Assignment.Instructor
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            LoginPageInstructor ALP = new LoginPageInstructor();
+            ALP.Show();
+            this.Hide();
+        }
     }
 }

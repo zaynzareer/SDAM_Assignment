@@ -107,5 +107,12 @@ namespace SDAM2_Assignment.Students
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LoginPageStudent SLP = new LoginPageStudent();
+            SLP.Show();
+            this.Hide();
+        }
     }
 }

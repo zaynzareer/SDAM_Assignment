@@ -48,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dgvStudentEnrollment = new System.Windows.Forms.DataGridView();
             this.dgvStudentPerformance = new System.Windows.Forms.DataGridView();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -56,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableCourses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentEnrollment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentPerformance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEnrollmentPage1
@@ -174,7 +176,7 @@
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(288, 1);
+            this.dataGridView2.Location = new System.Drawing.Point(288, 11);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(915, 69);
             this.dataGridView2.TabIndex = 134;
@@ -265,12 +267,24 @@
             this.dgvStudentPerformance.Size = new System.Drawing.Size(235, 104);
             this.dgvStudentPerformance.TabIndex = 171;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(80, 504);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(67, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 172;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // STUDENTSUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(994, 531);
+            this.ClientSize = new System.Drawing.Size(994, 551);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dgvStudentPerformance);
             this.Controls.Add(this.dgvStudentEnrollment);
             this.Controls.Add(this.label4);
@@ -301,6 +315,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableCourses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentEnrollment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentPerformance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +342,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvStudentEnrollment;
         private System.Windows.Forms.DataGridView dgvStudentPerformance;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
