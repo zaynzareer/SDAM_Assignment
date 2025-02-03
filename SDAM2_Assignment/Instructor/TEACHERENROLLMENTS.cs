@@ -128,5 +128,12 @@ namespace SDAM2_Assignment.Instructor
             performance.Show();
             this.Hide();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LoginPageInstructor ALP = new LoginPageInstructor();
+            ALP.Show();
+            this.Hide();
+        }
     }
 }

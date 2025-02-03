@@ -51,6 +51,7 @@
             this.txtSubmissionFilePath = new System.Windows.Forms.TextBox();
             this.btnChooseFile = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayAssignment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -59,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEnrollmentPage1
@@ -187,7 +189,7 @@
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(283, 2);
+            this.dataGridView2.Location = new System.Drawing.Point(283, 30);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(1068, 69);
             this.dataGridView2.TabIndex = 155;
@@ -302,12 +304,24 @@
             this.panel15.Size = new System.Drawing.Size(703, 84);
             this.panel15.TabIndex = 161;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(76, 513);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(67, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 169;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // STUDENTAssignment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(984, 506);
+            this.ClientSize = new System.Drawing.Size(984, 563);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnEnrollmentPage1);
             this.Controls.Add(this.btnStudentsPage1);
             this.Controls.Add(this.btnAssignmentPage1);
@@ -334,6 +348,7 @@
             this.panel5.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,5 +377,6 @@
         private System.Windows.Forms.TextBox txtSubmissionFilePath;
         private System.Windows.Forms.Button btnChooseFile;
         private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

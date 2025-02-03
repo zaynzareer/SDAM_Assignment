@@ -34,6 +34,17 @@ namespace SDAM2_Assignment.Students
             Loadlist();
         }
 
+        public void Clear()
+        {
+            txtId.Clear();
+            txtName.Clear();
+            txtAge.Clear();
+            cmbGender.SelectedIndex = -1;
+            txtTelephone.Clear();
+            txtCity.Clear();
+            txtUsername.Clear();
+        }
+
         private void btnDashboard1_Click(object sender, EventArgs e)
         {
             STUDENTSUI studentsui = new STUDENTSUI();
@@ -174,12 +185,15 @@ namespace SDAM2_Assignment.Students
             }
         }
 
-        private void Clear()
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            LoginPageStudent SLP = new LoginPageStudent();
+            SLP.Show();
+            this.Hide();
         }
     }
-}
+    }
+
             
        
     
